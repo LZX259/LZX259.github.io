@@ -2109,7 +2109,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1691577765652),
+    lastupdate: new Date(1691652929060),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2520,9 +2520,73 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/10/传输层协议/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Hexo">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/"  itemprop="url">
+        传输层协议
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        协议：TCP, UDP和SCTP
+TCP&#x2F;IP协议族如图：
+
+TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP
+
+UDP
+ UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。
+ 进程在套接字写入一个消息（应用层），该...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-10T10:55:30+08:00">2023-08-10</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -2621,17 +2685,22 @@ Core Stack Porting Layer
   <div class='md article-desc' itemprop="articleBody">
     
       
-        常用专业术语
+        1.常用专业术语
+AS：接入层
+L1：网络层
+L2：数据链路层
+L3：网络层
+
+
+NAS：非接入层
+传输层、会话层、表示层、应用层
+
+
 4G LTE一般特指TD-LTE制式网络
-4G -&gt; LTE        4G+ -&gt; LTE-A
-3G UMTS组网架构分为4层：终端（UE）、基站（NodeB）、无线网络控制器（RNC）、核心网（CN）
-4G LTE组网架构分为3层：终端（UE）、基站（eNodeB）、核心网（EPC）
-
-
-
-LTE
-EPC与eNodeB之间采用S1接口
-eNodeB与eNod...
+4G -&gt; LTE     4G+ -&gt; LTE-A
+LTE通常分为FDD LTE和TDD LTE
+TDD，时分双工(Time Division Duplexing)
+FDD，频分双工(Frequency...
       
     
   </div>
