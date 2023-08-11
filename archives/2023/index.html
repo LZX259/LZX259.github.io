@@ -2109,7 +2109,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1691653292698),
+    lastupdate: new Date(1691747422333),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2522,9 +2522,75 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/11/4G-LTE（二）/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Hexo">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/11/4G-LTE%EF%BC%88%E4%BA%8C%EF%BC%89/"  itemprop="url">
+        4G-LTE（二）
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        2. LTE
+EPC与eNodeB之间采用S1接口。S1接口是基站（无线网）与核心网之间的接口，包含两种接口：
+S1-U：用户面，用来连接eNB与SGW，用于传送业务数据
+S1-MME：控制面，用来连接eNB与MME，用于传送信令
+
+
+eNodeB与eNodeB之间采用X2接口，包含两种：
+X2-U ：用户面
+X2-CP : 控制面
+X2-U与X2-CP虽然是不同的逻辑端口，但通常是同一个物...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-11T15:21:20+08:00">2023-08-11</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/11/4G-LTE%EF%BC%88%E4%BA%8C%EF%BC%89/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -2659,7 +2725,7 @@ Core Stack Porting Layer
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/4G-LTE/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/4G-LTE（一）/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Hexo">
   </span>
@@ -2677,30 +2743,30 @@ Core Stack Porting Layer
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/08/08/4G-LTE/"  itemprop="url">
-        4G_LTE
+      <a href="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/"  itemprop="url">
+        4G_LTE（一）
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1.常用专业术语
-AS：接入层
+        常用专业术语1.AS与NAS
+AS：接入层信令，是UE和接入网eUTRAN使用的信令，由基站来处理，核心网
 L1：物理层
 L2：数据链路层
 L3：网络层
 
 
-NAS：非接入层
+NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途径接入网eUTRAN，但基站不作分析
 传输层、会话层、表示层、应用层
 
 
+
+2.LTE
 4G LTE一般特指TD-LTE制式网络
-4G -&gt; LTE     4G+ -&gt; LTE-A
-LTE通常分为FDD LTE和TDD LTE
-TDD，时分双工(Time Division Duplexing)
-FDD，频分双工(Frequency...
+
+4G -&gt; LTE     4G+...
       
     
   </div>
@@ -2713,7 +2779,7 @@ FDD，频分双工(Frequency...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/08/08/4G-LTE/' itemprop="url">
+          <a class='readmore' href='/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/' itemprop="url">
             Read More
           </a>
         </div>
