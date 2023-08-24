@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/08/10/传输层协议/"/>
+  <link rel="canonical" href="http://example.com/2023/08/10/网络传输协议（一）/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>传输层协议（一） - 阿毛之家</title>
+  <title>网络传输协议（一） - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="传输层协议（一）">
-<meta property="og:url" content="http://example.com/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:title" content="网络传输协议（一）">
+<meta property="og:url" content="http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="协议：TCP, UDP和SCTP TCP&#x2F;IP协议族如图：  TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP  UDP  UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。  进程在套接字写入一个消息（应用层），该消息随">
+<meta property="og:description" content="协议：TCP, UDP和SCTP TCP&#x2F;IP协议族如图：  TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP 1. UDP**UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。**  进程在套接字写入一个消息（应用层），">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-10T02:55:30.000Z">
-<meta property="article:modified_time" content="2023-08-23T10:04:12.212Z">
+<meta property="article:modified_time" content="2023-08-24T02:19:30.604Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2111,7 +2111,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1692785100230),
+    lastupdate: new Date(1692863310104),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2442,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/10/传输层协议/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/10/网络传输协议（一）/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2463,7 +2463,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        传输层协议（一）
+        网络传输协议（一）
       </h1>
       <div class='new-meta-box'>
         
@@ -2513,40 +2513,43 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p><em><strong>协议：TCP, UDP和SCTP</strong></em></p>
 <p><strong>TCP&#x2F;IP协议族如图：</strong></p>
-<p><img src="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/image-3.png" class="lazyload" data-srcset="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/image-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-3.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
 <p>TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP</p>
-<ol>
-<li><p>UDP</p>
-<p> <strong>UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。</strong></p>
-<p> 进程在套接字写入一个消息（应用层），该消息随后被封装到一个UDP数据报（传输层），该数据报进而被封装到IP数据报（网络层），发往目的地。UDP不保证按需交付，而且不保证每个数据报只到达一次。</p>
-<p> 不同于TCP无边界的字节流，UDP的数据报都有一个长度。</p>
-<p> 无连接的。意味着一个UDP client和server之间不用存在长期关系。一个client可以创建一个UDP socket并用它前后发送多个数据报给多个服务器。同理，一个server也可以用一个socket来从不同的客户端接收数据。</p>
-</li>
-<li><p>TCP  </p>
-<p> <strong>TCP（Transmission Control Protocol, 传输控制协议）。一个面向连接的协议，提供可靠的全双工字节流。使用的套接字为流套接字。</strong></p>
-<p> 在描述TCP连接的建立和释放前，需要说明。网络编程中连接的建立和释放基本上都是由客户端（应用程序）主动发起。</p>
-<p> <strong>TCP连接建立—三次握手：</strong></p>
-<p> <img src="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/image-4.png" class="lazyload" data-srcset="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/image-4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p> <strong>TCP连接释放—四次挥手：</strong></p>
-<p> <img src="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/image-5.png" class="lazyload" data-srcset="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/image-5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<ol>
-<li>客户端主动调用close，向服务器发送一个FIN分节，表示自己的数据发送完毕；</li>
-<li>服务器收到FIN后返回ACK，表示自己收到客户端关闭连接的请求；【此时只有客户端连接关闭】</li>
-<li>服务器完成针对该客户端的服务后调用close关闭其服务进程。服务器向客户端发送一个FIN表示自己的服务应答数据发送完毕；</li>
-<li>客户端返回一个ACK表示确认。【此时双方连接都关闭】</li>
-</ol>
-<p> <strong>TCP为应用程序提供面向连接的可靠服务，用于OM通道的传输承载。TCP通过如下特征来实现此目标：</strong></p>
-<ul>
-<li>差错控制：TCP通过累积的确认信息来报告丢失的分段或接收端分组的失序，通过超时和重传机制来确保应用程序数据的可靠接收。</li>
-<li>流量控制：TCP用滑动窗口流量控制机制来防止接收缓冲区的溢出。</li>
-<li>拥塞控制：TCP通过慢启动（slow start）、拥塞避免（congestion avoidance）和快速重传&#x2F;快速恢复（fast retransmit &#x2F; fast recovery）机制来适应路由器的阻塞，以获得高吞吐量。</li>
-</ul>
-</li>
-<li><p>SCTP</p>
-<p> SCTP（Stream Control Transmission Protocol，流控制传输协议）。一个提供可靠全双工关联的面向连接协议。“关联”区别于“连接”。关联是指两个系统间的通信，可能一个系统支持多宿（一个端口对应一组IP）；连接只涉及两个IP间的通信。</p>
-<p> SCTP通过在两个对等的SCTP终端间建立SCTP关联以实现面向连接的可靠传输。<br> <strong>SCTP建立在IP层之上，是S1&#x2F;X2接口的信令承载协议。一条SCTP路径由四个参数共同标识：本端IP地址+本端SCTP端口号+对端IP地址+对端SCTP端口号。</strong></p>
-</li>
-</ol>
+<h2 id="1-UDP"><a href="#1-UDP" class="headerlink" title="1. UDP"></a>1. UDP</h2><pre><code>**UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。**
+
+进程在套接字写入一个消息（应用层），该消息随后被封装到一个UDP数据报（传输层），该数据报进而被封装到IP数据报（网络层），发往目的地。UDP不保证按需交付，而且不保证每个数据报只到达一次。
+
+不同于TCP无边界的字节流，UDP的数据报都有一个长度。
+
+无连接的。意味着一个UDP client和server之间不用存在长期关系。一个client可以创建一个UDP socket并用它前后发送多个数据报给多个服务器。同理，一个server也可以用一个socket来从不同的客户端接收数据。
+</code></pre>
+<h2 id="2-TCP"><a href="#2-TCP" class="headerlink" title="2. TCP"></a>2. TCP</h2><pre><code>**TCP（Transmission Control Protocol, 传输控制协议）。一个面向连接的协议，提供可靠的全双工字节流。使用的套接字为流套接字。**
+
+在描述TCP连接的建立和释放前，需要说明。网络编程中连接的建立和释放基本上都是由客户端（应用程序）主动发起。
+
+**TCP连接建立—三次握手：**
+
+![Alt text](./网络传输协议（一）/image-4.png)
+
+**TCP连接释放—四次挥手：**
+
+![Alt text](./网络传输协议（一）/image-5.png)
+
+1. 客户端主动调用close，向服务器发送一个FIN分节，表示自己的数据发送完毕；
+2. 服务器收到FIN后返回ACK，表示自己收到客户端关闭连接的请求；【此时只有客户端连接关闭】
+3. 服务器完成针对该客户端的服务后调用close关闭其服务进程。服务器向客户端发送一个FIN表示自己的服务应答数据发送完毕；
+4. 客户端返回一个ACK表示确认。【此时双方连接都关闭】
+
+**TCP为应用程序提供面向连接的可靠服务，用于OM通道的传输承载。TCP通过如下特征来实现此目标：**
+- 差错控制：TCP通过累积的确认信息来报告丢失的分段或接收端分组的失序，通过超时和重传机制来确保应用程序数据的可靠接收。
+- 流量控制：TCP用滑动窗口流量控制机制来防止接收缓冲区的溢出。
+- 拥塞控制：TCP通过慢启动（slow start）、拥塞避免（congestion avoidance）和快速重传/快速恢复（fast retransmit / fast recovery）机制来适应路由器的阻塞，以获得高吞吐量。
+</code></pre>
+<h2 id="3-SCTP"><a href="#3-SCTP" class="headerlink" title="3. SCTP"></a>3. SCTP</h2><pre><code>SCTP（Stream Control Transmission Protocol，流控制传输协议）。一个提供可靠全双工关联的面向连接协议。“关联”区别于“连接”。关联是指两个系统间的通信，可能一个系统支持多宿（一个端口对应一组IP）；连接只涉及两个IP间的通信。
+
+SCTP通过在两个对等的SCTP终端间建立SCTP关联以实现面向连接的可靠传输。
+**SCTP建立在IP层之上，是S1/X2接口的信令承载协议。一条SCTP路径由四个参数共同标识：本端IP地址+本端SCTP端口号+对端IP地址+对端SCTP端口号。**
+</code></pre>
 
   </div>
   
@@ -2571,10 +2574,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-23T18:04:12+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-24T10:19:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 23, 2023</p>
+    <p>更新于：Aug 24, 2023</p>
   </a>
 </div>
 
@@ -2593,7 +2596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/&title=传输层协议（一） - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/&title=网络传输协议（一） - 阿毛之家&summary="
           
           >
           
@@ -2605,7 +2608,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/&title=传输层协议（一） - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/&title=网络传输协议（一） - 阿毛之家&summary="
           
           >
           
@@ -2617,7 +2620,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/&title=传输层协议（一） - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/&title=网络传输协议（一） - 阿毛之家&summary="
           
           >
           
@@ -2684,7 +2687,7 @@ CSPL核心是以l...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2726,7 +2729,7 @@ CSPL核心是以l...</p>
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-UDP"><span class="toc-text">1. UDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TCP"><span class="toc-text">2. TCP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-SCTP"><span class="toc-text">3. SCTP</span></a></li></ol>
   </div>
 </section>
 
@@ -3220,7 +3223,7 @@ CSPL核心是以l...</p>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/10/传输层协议/","name":"传输层协议（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"传输层协议（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/10/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/","wordCount":0,"datePublished":"2023-08-10T02:55:30.000Z","dateModified":"2023-08-23T10:04:12.212Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/10/网络传输协议（一）/","name":"网络传输协议（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"网络传输协议（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/","wordCount":0,"datePublished":"2023-08-10T02:55:30.000Z","dateModified":"2023-08-24T02:19:30.604Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
