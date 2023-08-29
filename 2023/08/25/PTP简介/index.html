@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/08/09/cspl架构/"/>
+  <link rel="canonical" href="http://example.com/2023/08/25/ptp简介/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>CSPL架构 - 阿毛之家</title>
+  <title>PTP简介 - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSPL架构">
-<meta property="og:url" content="http://example.com/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/index.html">
+<meta property="og:title" content="PTP简介">
+<meta property="og:url" content="http://example.com/2023/08/25/PTP%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="1.CSPL架构简述CSPL的定位和目的：  CSPL位于业务与操作系统之间 屏蔽操作系统的复杂接口，提供统一的操作方式，使得业务进程只需要关心本身业务，从而加速协议栈的开发 CSPL核心是以lib库（动态库、静态库）的形式提供给业务，同时为了支撑业务，提供多个进程支撑；DAEMON、LOG、CLI、HA      CSPL Core Stack Porting Layer 核心系统接口层">
+<meta property="og:description" content="1 网络时钟同步在通信网络中，许多业务的正常运行都要求网络时钟同步，即整个网络各设备之间的时间或频率差保持在合理的误差水平内。主要分为两种：  时间同步：也叫相位同步（Phase synchronization），是指信号之间的频率和相位都保持一致，即信号之间的相位差恒为零。 频率同步（Frequency synchronization）：也叫时钟同步，是指信号之间在频率或相位上保持某种严格的特定">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-08-09T05:18:02.000Z">
-<meta property="article:modified_time" content="2023-08-22T11:54:40.667Z">
+<meta property="article:published_time" content="2023-08-25T01:47:48.000Z">
+<meta property="article:modified_time" content="2023-08-29T05:59:42.691Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2513,7 +2513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/09/CSPL架构/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/25/PTP简介/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2534,7 +2534,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        CSPL架构
+        PTP简介
       </h1>
       <div class='new-meta-box'>
         
@@ -2556,10 +2556,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-09T13:18:02+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-25T09:47:48+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 9, 2023</p>
+    <p>发布于：Aug 25, 2023</p>
   </a>
 </div>
 
@@ -2582,323 +2582,79 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-CSPL架构简述"><a href="#1-CSPL架构简述" class="headerlink" title="1.CSPL架构简述"></a>1.CSPL架构简述</h2><p><strong>CSPL的定位和目的：</strong></p>
+    <h2 id="1-网络时钟同步"><a href="#1-网络时钟同步" class="headerlink" title="1 网络时钟同步"></a>1 网络时钟同步</h2><p>在通信网络中，许多业务的正常运行都要求网络时钟同步，即整个网络各设备之间的时间或频率差保持在合理的误差水平内。主要分为两种：</p>
 <ul>
-<li>CSPL位于业务与操作系统之间</li>
-<li>屏蔽操作系统的复杂接口，提供统一的操作方式，使得业务进程只需要关心本身业务，从而加速协议栈的开发</li>
-<li>CSPL核心是以lib库（动态库、静态库）的形式提供给业务，同时为了支撑业务，提供多个进程支撑；DAEMON、LOG、CLI、HA</li>
+<li>时间同步：也叫相位同步（Phase synchronization），是指信号之间的频率和相位都保持一致，即信号之间的相位差恒为零。</li>
+<li>频率同步（Frequency synchronization）：也叫时钟同步，是指信号之间在频率或相位上保持某种严格的特定关系，信号在其对应的有效瞬间以同一平均速率出现，以保证通信网络中的所有设备都以相同的速率运行，即信号之间保持恒定的相位差。</li>
 </ul>
-<p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<table>
-<thead>
-<tr>
-<th align="center">CSPL</th>
-<th align="left">Core Stack Porting Layer</th>
-<th align="left">核心系统接口层</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">OSAL</td>
-<td align="left">Operating System Adapter Layer</td>
-<td align="left">操作系统适配层</td>
-</tr>
-<tr>
-<td align="center">任务管理</td>
-<td align="left">任务调度管理等功能，提供统一的运行调度机制</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">内存管理</td>
-<td align="left">提供内存池，高端内存等功能</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">消息通信</td>
-<td align="left">提供任务间的消息通信处理等功能，如UDP、TCP、消息队列等</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">系统调试</td>
-<td align="left">提供Log、信令跟踪、黑匣子、运行时调试，性能统计等功能</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">事件管理</td>
-<td align="left">提供事件服务器，支持事件订阅、发布操作</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">其他功能</td>
-<td align="left">提供定时器，数据库，CLI调试等功能</td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-1.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<h2 id="2-CSPL设计思路"><a href="#2-CSPL设计思路" class="headerlink" title="2.CSPL设计思路"></a>2.CSPL设计思路</h2><h3 id="2-1模型抽象"><a href="#2-1模型抽象" class="headerlink" title="2.1模型抽象"></a>2.1模型抽象</h3><h4 id="2-1-1数据结构"><a href="#2-1-1数据结构" class="headerlink" title="2.1.1数据结构"></a>2.1.1数据结构</h4><p><strong>QMANIFEST</strong><br>    每一个协议栈实例（模块）由QMANIFEST数据结构来表示，CSPL通过此数据结构来和协议栈交互， CSPL_RegisterModule函数使用此结构体向CSPL注册module</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QMANIFEST</span>&#123;</span></span><br><span class="line">    <span class="type">const</span> <span class="type">char</span> *name;       <span class="comment">//模块名称</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> service;  <span class="comment">//模块ID</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">        <span class="type">void</span> *(*early)(<span class="type">void</span> *);     <span class="comment">//模块早期初始化函数，不能发消息，不能启动定时器</span></span><br><span class="line">        <span class="type">void</span> *(*late)(<span class="type">void</span> *);      <span class="comment">//模块后期初始化函数，可以发消息，和启动定时器</span></span><br><span class="line">    &#125; init;     <span class="comment">//初始化函数</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">        <span class="type">int</span> (*message)(<span class="type">void</span> *, <span class="type">void</span> *);         <span class="comment">//消息处理函数，需要返回1</span></span><br><span class="line">        <span class="type">void</span> (*timer)(QTIMER, <span class="type">void</span> *, <span class="type">void</span> *);  <span class="comment">//定时器处理函数</span></span><br><span class="line">    &#125; handler;  <span class="comment">//消息、定时器处理入口</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">        <span class="type">void</span> *(*pack)(QMODULE, <span class="type">void</span> *, <span class="type">unsigned</span> <span class="type">int</span> *);</span><br><span class="line">        <span class="type">void</span> *(*unpack)(QMODULE, <span class="type">void</span> *);</span><br><span class="line">        <span class="type">void</span> *(*alloc)(QMODULE, <span class="type">unsigned</span> <span class="type">int</span>);</span><br><span class="line">    &#125; method;   <span class="comment">//消息编解码函数</span></span><br><span class="line"></span><br><span class="line">    <span class="type">const</span> <span class="type">unsigned</span> <span class="type">long</span> *destinations;  <span class="comment">//外部交互模块</span></span><br><span class="line">&#125; QMANIFEST;</span><br></pre></td></tr></table></figure>
-
-<p><strong>cspl_address_t</strong><br>    每一个协议栈路由信息用cspl_address_t数据结构来表示，CSPL_Open内部通过此数据结构来配置本地接收和发送的路由（即创建相应的fd， 并加入到epoll中）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    route_type_et   type;       <span class="comment">//接收或者发送0:recv  1:send  2:trace（暂时不支持）</span></span><br><span class="line">    trans_type_et   transType;  <span class="comment">//传输类型0:UDP  1:TCP  2:msg queue消息队列为POSIX版本3：LINX</span></span><br><span class="line">    U8  isStripCspIHead;        <span class="comment">//该字段仅对外部模块起作用</span></span><br><span class="line">    U32 moduleId;               <span class="comment">//模块ID号，如果是接收，则当没有CSPL头的消息转发到该模块</span></span><br><span class="line">    <span class="class"><span class="keyword">union</span>&#123;</span></span><br><span class="line">        U8 ipAddress[CSPL_IP_ADDRESS_LENGTH];   <span class="comment">//ip地址加端口号，类似127.0.0.1::6700</span></span><br><span class="line">        U8 mqName[CSPL_MQ_NAME_LENGTH];         <span class="comment">//消息队列的名称。类似“/RrmToMac%d:1024” 后面的数字作为消息最大长度值，如果没有，则使用默认配置</span></span><br><span class="line">        U8 endPoint[CSPL_LINX_ENDPOINT_LENGTH]; <span class="comment">//LINX endpoint名称的最大长度</span></span><br><span class="line">        U8 rawType[CSPL_IP_ADDRESS_LENGTH];     <span class="comment">//原始套接字类型，可选值：UDP、TCP、ICMP、IGMP</span></span><br><span class="line">    &#125;address;</span><br><span class="line">&#125;<span class="type">cspl_address_t</span>;    <span class="comment">//open的时候传入该数组</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>qvars</strong><br>    qvars结构体用于描述driver，当模块未设置立即发送标志时，hold队列用于存放所有的发送消息，当本driver调度运行时，会将所有hold消息都发送出去。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">qvars</span>&#123;</span></span><br><span class="line">    YLNODE __header__;      <span class="comment">//driver节点，挂载到qcontext的driverloops双链表上</span></span><br><span class="line">    QMODULE self;           <span class="comment">//driver当前的处理的module指针</span></span><br><span class="line">    YSQUEUE <span class="built_in">queue</span>;          <span class="comment">//接收消息优先级队列</span></span><br><span class="line">    YSQUEUE hold;           <span class="comment">//发送消息优先级队列</span></span><br><span class="line">    YLIST modules;          <span class="comment">//module双链表</span></span><br><span class="line"></span><br><span class="line">    <span class="type">void</span> (*wakeup)(<span class="type">void</span> *); <span class="comment">//用于唤醒driver，对应于QWAIT wakeup</span></span><br><span class="line">    <span class="type">void</span> *argwakeup;</span><br><span class="line">&#125;qvars;        </span><br></pre></td></tr></table></figure>
-
-<p><strong>QSHELL</strong><br>    QSHELL结构体用于适配不同的操作系统， 属于OSAL层。使用多路复用IO模型，内部使用epoll完成对多路事件的监控。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QSHELL</span>&#123;</span></span><br><span class="line">    <span class="type">void</span> (*timedwait)(<span class="type">void</span> *, <span class="type">const</span> QTIME);       <span class="comment">//睡眠等待指定的时间，若所监控的描述符数组中有事件发生（epoll），则结束睡眠</span></span><br><span class="line">    <span class="type">void</span> (*send)(<span class="type">void</span> *, <span class="type">const</span> <span class="type">void</span> *, QMODULE, QMODULE, <span class="type">void</span> *, <span class="type">unsigned</span> <span class="type">int</span>);     <span class="comment">//将消息发送到指定的外部模块</span></span><br><span class="line">    <span class="type">void</span> (*receive)(<span class="type">void</span> *, <span class="type">const</span> <span class="type">void</span> *, QMODULE *, QMODULE *, <span class="type">signed</span> <span class="type">char</span> *);  <span class="comment">//扫描监听的描述符数组，从fd可读事件中读取所有消息</span></span><br><span class="line">    <span class="comment">//receive内部调用epoll_wait时传入的时间参数为0，是非阻塞调用</span></span><br><span class="line">    <span class="type">void</span> *(*open)(<span class="type">void</span> *);  <span class="comment">//依据形参中cspl_address_t信息创建发送、接收路由</span></span><br><span class="line">    <span class="comment">//每一条路由信息实际都对应着一个fd，并加入到epoll的监听数组中</span></span><br><span class="line">    <span class="type">void</span> (*close)(<span class="type">void</span> *);  <span class="comment">//关闭路由</span></span><br><span class="line">    <span class="type">void</span> *(*hash)(<span class="type">void</span> *, <span class="type">void</span> *);</span><br><span class="line">&#125;;        </span><br></pre></td></tr></table></figure>
-
-<p><strong>QWAIT</strong><br>    QWAIT结构体用于适配不同的操作系统， 属于OSAL层。使用条件变量+互斥锁，完成driver的睡眠与唤醒操作。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QWAIT</span>&#123;</span></span><br><span class="line">    <span class="type">void</span> *(*newchannel)(<span class="type">void</span>);              <span class="comment">//新建一个条件变量+互斥锁</span></span><br><span class="line">    <span class="type">void</span> (*sleep)(<span class="type">void</span> *, <span class="type">const</span> QTIME *);   <span class="comment">//driver睡眠指定的时间</span></span><br><span class="line">    <span class="type">void</span> (*wakeup)(<span class="type">void</span> *);                 <span class="comment">//唤醒driver</span></span><br><span class="line">    <span class="type">void</span> *(*walltime)(QTIME *);             <span class="comment">//获取当前系统启动后的累加时间</span></span><br><span class="line">&#125;;        </span><br></pre></td></tr></table></figure>
-
-<pre><code>walltime内部使用clock_gettime(CLOCK_MONOTONIC, &amp;ts)获取系统时间，此时间为单调递增时间，避免系统时间修改后， 对定时器造成影响。
-newchannel中创建的条件变量使用函数pthread_condattr_setclock(&amp;condattr, CLOCK_MONOTONIC);来避免系统时间修改所造成的影响
-</code></pre>
-<p><strong>QSYSOP</strong><br>    QSYSOP结构体用于适配不同的操作系统， 属于OSAL层。使用linux线程局部存储设施来存放每个线程都具有的信息</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="type">void</span> *(*<span class="built_in">malloc</span>)(<span class="type">unsigned</span> <span class="type">int</span>);       </span><br><span class="line">    <span class="type">void</span> (*<span class="built_in">free</span>)(<span class="type">void</span> *);     </span><br><span class="line">    <span class="type">void</span> *(*newkey)(<span class="type">void</span>);          <span class="comment">//pthread_key_create</span></span><br><span class="line">    <span class="type">void</span> *(*getkey)(<span class="type">void</span> *);        <span class="comment">//pthread_getspecific</span></span><br><span class="line">    <span class="type">void</span> (*setkey)(<span class="type">void</span> *, <span class="type">void</span> *); <span class="comment">//pthread_setspecific</span></span><br><span class="line">    <span class="type">void</span> (*destroylock)(<span class="type">void</span> *);</span><br><span class="line">    <span class="type">void</span> (*lock)(<span class="type">void</span> *);           <span class="comment">//pthread_mutex_lock</span></span><br><span class="line">    <span class="type">void</span> (*unlock)(<span class="type">void</span> *);         <span class="comment">//pthread_mutex_unlock</span></span><br><span class="line">    <span class="type">int</span> (*<span class="built_in">vprintf</span>)(<span class="type">const</span> <span class="type">char</span> *, va_list);</span><br><span class="line">    <span class="type">int</span> (*iprintf)(<span class="type">const</span> <span class="type">char</span> *, va_list);</span><br><span class="line">    <span class="type">void</span> (*<span class="built_in">abort</span>)(<span class="type">void</span>);</span><br><span class="line">&#125;QSYSOP;</span><br></pre></td></tr></table></figure>
-<h4 id="2-1-2运行模式"><a href="#2-1-2运行模式" class="headerlink" title="2.1.2运行模式"></a>2.1.2运行模式</h4><ul>
-<li><p>单线程</p>
+<p><img src="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image.png" class="lazyload" data-srcset="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<h2 id="2-PTP协议"><a href="#2-PTP协议" class="headerlink" title="2 PTP协议"></a>2 PTP协议</h2><p>PTP（Precision Time Protocol，精确时间协议）是一种时间同步的协议，其本身只是用于设备之间的高精度时间同步，但也可被借用于设备之间的频率同步。相比现有的各种时间同步机制，PTP具备以下优势：</p>
 <ul>
-<li><p>一个domain（进程）只有一个driver，所有module（协议栈模块）运行在一个driver内</p>
-</li>
-<li><p>driver驱动协议栈运行，同时负责对外通信（收发消息）</p>
-<p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-4.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-</li>
+<li>相比NTP（Network Time Protocol，网络时间协议），PTP能够满足更高精度的时间同步要求：NTP一般只能达到亚秒级的时间同步精度，而PTP则可达到亚微秒级。</li>
+<li>相比GPS（Global Positioning System，全球定位系统），PTP具备更低的建设和维护成本，并且由于可以摆脱对GPS的依赖，在国家安全方面也具备特殊的意义。</li>
 </ul>
-</li>
-<li><p>多线程</p>
+<h2 id="3-PTP基本概念"><a href="#3-PTP基本概念" class="headerlink" title="3 PTP基本概念"></a>3 PTP基本概念</h2><h3 id="3-1-PTP域"><a href="#3-1-PTP域" class="headerlink" title="3.1 PTP域"></a>3.1 PTP域</h3><p>我们将应用了PTP协议的网络称为PTP域。PTP域内有且只有一个同步时钟，域内的所有设备都与该时钟保持同步。</p>
+<h3 id="3-2-PTP端口"><a href="#3-2-PTP端口" class="headerlink" title="3.2 PTP端口"></a>3.2 PTP端口</h3><p>我们将设备上运行了PTP协议的端口称为PTP端口，可分为以下三种：</p>
 <ul>
-<li><p>一个domain有多个driver，module（协议栈模块）分散运行在多个driver上</p>
-</li>
-<li><p>domain内有一个主driver负责对外通信（收发消息）</p>
-<p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-3.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-</li>
+<li>主端口（Master Port）：发布同步时间的端口，可存在于BC或OC上。</li>
+<li>从端口（Slave Port）：接收同步时间的端口，可存在于BC或OC上。</li>
+<li>被动端口（Passive Port）：既不接收同步时间、也不对外发布同步时间的端口，只存在于BC上。</li>
+</ul>
+<h3 id="3-3-时钟节点"><a href="#3-3-时钟节点" class="headerlink" title="3.3 时钟节点"></a>3.3 时钟节点</h3><p>PTP域中的节点称为时钟节点，PTP协议定义了以下三种类型的基本时钟节点：    </p>
+<ol>
+<li>OC（Ordinary Clock，普通时钟）：该时钟节点在同一个PTP域内只有一个PTP端口参与时间同步，并通过该端口从上游时钟节点同步时间。此外，当时钟节点作为时钟源时，可以只通过一个PTP端口向下游时钟节点发布时间，我们也称其为OC。</li>
+<li>该时钟节点在同一个PTP域内拥有多个PTP端口参与时间同步。它通过其中一个端口从上游时钟节点同步时间，并通过其余端口向下游时钟节点发布时间。此外，当时钟节点作为时钟源时，可以通过多个PTP端口向下游时钟节点发布时间的，我们也称其为BC。</li>
+<li>TC（Transparent clock，透明时钟）：与BC&#x2F;OC相比，BC&#x2F;OC需要与其它时钟节点保持时间同步，而TC则不与其它时钟节点保持时间同步。TC有多个PTP端口，但它只在这些端口间转发PTP协议报文并对其进行转发延时校正，而不会通过任何一个端口同步时间。TC包括以下两种类型：<ul>
+<li>E2ETC（End-to-End Transparent Clock，端到端透明时钟）：直接转发网络中非P2P（Peer-to-Peer，点到点）类型的协议报文，并参与计算整条链路的延时。</li>
+<li>P2PTC（Peer-to-Peer Transparent Clock，点到点透明时钟）：只直接转发Sync报文、Follow_Up报文和Announce报文，而终结其它PTP协议报文，并参与计算整条链路上每一段链路的延时。</li>
 </ul>
 </li>
-<li><p>多线程+IndependDriver</p>
+</ol>
+<p><img src="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image1.png" class="lazyload" data-srcset="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p>除了上述三种基本时钟节点以外，还有一些混合时钟节点，譬如融合了TC和OC各自特点的TC+OC：它在同一个PTP域内拥有多个PTP端口，其中一个端口为OC类型，其它端口则为TC类型。一方面，它通过TC类型的端口转发PTP协议报文并对其进行转发延时校正；另一方面，它通过OC类型的端口进行时间的同步。与TC的分类类似，TC+OC也包括两种类型：E2ETC+OC和P2PTC+OC。</p>
+<h3 id="3-4-主从关系"><a href="#3-4-主从关系" class="headerlink" title="3.4 主从关系"></a>3.4 主从关系</h3><p>主从关系（Master-Slave）是相对而言的，对于相互同步的一对时钟节点来说，存在如下主从关系：</p>
 <ul>
-<li><p>一个domain有多个driver，module（协议栈模块）分散运行在多个driver上</p>
-</li>
-<li><p>domain内有一个主driver负责对外通信（收发消息）</p>
-</li>
-<li><p>domain内还有独立的driver可以单独接收外部数据</p>
-<p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-5.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-</li>
+<li>发布同步时间的节点称为主节点，而接收同步时间的节点则称为从节点。</li>
+<li>主节点上的时钟称为主时钟，而从节点上的时钟则称为从时钟。</li>
+<li>发布同步时间的端口称为主端口，而接收同步时间的端口则称为从端口。</li>
 </ul>
-</li>
-</ul>
-<h3 id="2-2通信机制"><a href="#2-2通信机制" class="headerlink" title="2.2通信机制"></a>2.2通信机制</h3><p>CSPL提供消息循环，各协议模块(module)之间基于消息进行通信：</p>
+<h3 id="3-5-最优时钟"><a href="#3-5-最优时钟" class="headerlink" title="3.5 最优时钟"></a>3.5 最优时钟</h3><p>PTP域中所有的时钟节点都按一定层次组织在一起，整个域的参考时间就是最优时钟（Grandmaster Clock，GM），即最高层次的时钟。通过各时钟节点间PTP协议报文的交互，最优时钟的时间最终将被同步到整个PTP域中，因此也称其为时钟源。</p>
+<p>最优时钟可以通过手工配置静态指定，也可以通过BMC（Best Master Clock，最佳主时钟）协议动态选举，动态选举的过程如下：      </p>
 <ol>
-<li>内部模块（进程内）之间通过线程调度通信。<br> <em>基于链表实现，直接传递消息指针，消息处理支持零拷贝，引用计数等特性。</em></li>
-<li>与外部模块通信基于OS的IPC机制，比如socket。<br> <em>采用钩子注册机制，可以选择UDP、TCP、Linx、消息队列等具体机制。</em></li>
-<li>对每个外部模块可以单独注册通信函数。<br> <em>对每个外部模块可以选择不同的通信方式，比如板内选择消息队列，板间选择UDP socket。</em></li>
+<li>各时钟节点之间通过交互的Announce报文中所携带的最优时钟优先级、时间等级、时间精度等信息，最终选出一个节点作为PTP域的最优时钟，与此同时，各节点之间的主从关系以及各节点上的主从端口也确定了下来。通过这个过程，整个PTP域中建立起了一棵无环路、全连通，并以最优时钟为根的生成树。</li>
+<li>此后，主节点会定期发送Announce报文给从节点，如果在一段时间内，从节点没有收到主节点发来的Announce报文，便认为该主节点失效，于是重新进行最优时钟的选择。</li>
 </ol>
-<p>CSPL通讯抽象为driver内通信，driver之间通信，domain(进程)之间通信。  </p>
-<p>driver有发送消息(hold)和接收消息(queue)优先级队列，qvSchdule运行时，从接收消息队列上取出消息进行处理(qmodule-&gt;messageservice)， 从发送队列取出消息发送出去(qmodule-&gt;dispatch，仅在非立即发送模式下)</p>
-<h3 id="2-3消息格式"><a href="#2-3消息格式" class="headerlink" title="2.3消息格式"></a>2.3消息格式</h3><p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-2.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p>有效载荷长度：loadSize &#x3D; payload + CSPL_HEADER_SIZE</p>
-<h3 id="2-4内存管理"><a href="#2-4内存管理" class="headerlink" title="2.4内存管理"></a>2.4内存管理</h3><p>CSPL_AllocMsg：用于申请cspl消息内存结构</p>
+<h2 id="4-PTP同步原理"><a href="#4-PTP同步原理" class="headerlink" title="4 PTP同步原理"></a>4 PTP同步原理</h2><p>PTP同步的基本原理如下：主、从时钟之间交互同步报文并记录报文的收发时间，通过计算报文往返的时间差来计算主、从时钟之间的往返总延时，如果网络是对称的（即两个方向的传输延时相同），则往返总延时的一半就是单向延时，这个单向延时便是主、从时钟之间的时钟偏差，从时钟按照该偏差来调整本地时间，就可以实现其与主时钟的同步。</p>
+<p>PTP协议定义了两种传播延时测量机制：请求应答（Requset_Response）机制和端延时（Peer Delay）机制，且这两种机制都以网络对称为前提。</p>
+<h3 id="4-1-请求应答机制"><a href="#4-1-请求应答机制" class="headerlink" title="4.1 请求应答机制"></a>4.1 请求应答机制</h3><p><img src="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image-1.png" class="lazyload" data-srcset="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p>请求应答方式用于端到端的延时测量。其实现过程如下：  </p>
 <ol>
-<li>接收cspl消息<br><em>使用此函数申请内存，将接收到的cspl消息(cspl header + payload)打包后， 投递到目的module所对应的driver接收优先级队列中</em></li>
-<li>发送cspl消息<br><em>在此函数的返回值位置后面构造cspl header、填充消息payload后， 使用CSPL_SendMsg将消息发送到目的module</em></li>
+<li>主时钟向从时钟发送Sync报文，并记录发送时间t1；从时钟收到该报文后，记录接收时间t2。</li>
+<li>主时钟发送Sync报文之后，紧接着发送一个携带有t1的Follow_Up报文。</li>
+<li>从时钟向主时钟发送Delay_Req报文，用于发起反向传输延时的计算，并记录发送时间t3；主时钟收到该报文后，记录接收时间t4。</li>
+<li>主时钟收到Delay_Req报文之后，回复一个携带有t4的Delay_Resp报文。</li>
 </ol>
-<h3 id="2-5启动流程及默认模块"><a href="#2-5启动流程及默认模块" class="headerlink" title="2.5启动流程及默认模块"></a>2.5启动流程及默认模块</h3><p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-6.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p>CSPL_Init初始化时，会创建一个独立的driver，注册到此driver上的模块及功能如下：</p>
-<ol>
-<li><p>monitorEntity模块<br><em>初始化定时器，每隔5s遍历所有driver，获取每个driver上发送、接收队列中所有消息的数目；若有超时的消息，则回调msgTimeoutCallback接口函数；若业务有消息或者定时器消息阻塞，则回调userDeadLoopCallback接口函数；若接收队列消息数目&gt;maxPendRecvMsg，则回调driverMsgOverLoadCallback接口函数；最后回调totalMsgOverLoadCallback接口函数。</em></p>
-</li>
-<li><p>debugEntity模块<br><em>调用以DebugInfo结尾的调试函数，并回传执行结果(重定向)到cliDebug进程；全局变量打印及修改(宏和const变量除外)。</em></p>
-</li>
-<li><p>haEntity模块<br><em>用于主备切换。</em></p>
-</li>
-<li><p>eventEntity模块<br><em>用于实现事件初始化、发布、订阅、分发功能。<br>事件客户端、服务器代码运行于此模块中。</em></p>
-</li>
-</ol>
-<h3 id="2-6版本信息"><a href="#2-6版本信息" class="headerlink" title="2.6版本信息"></a>2.6版本信息</h3><ul>
-<li>查看版本号<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">strings  libcspl_interface.a | grep V10</span><br><span class="line">V10R02CA1.B002</span><br></pre></td></tr></table></figure></li>
-<li>查看编译时间<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">strings  libcspl_interface.a | grep csplBuildTime</span><br><span class="line">csplBuildTime: 2017-03-28 14:16:07</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="3-CSPL组件"><a href="#3-CSPL组件" class="headerlink" title="3.CSPL组件"></a>3.CSPL组件</h2><h3 id="3-1事件服务"><a href="#3-1事件服务" class="headerlink" title="3.1事件服务"></a>3.1事件服务</h3><p>CSPL提供一种事件服务机制，任何业务都可以作为事件发布者和事件订阅者。</p>
-<ol>
-<li><p>事件初始化<br><em>业务使用CSPL_EventInit初始化事件，事件服务端记录所有的事件订阅信息。</em></p>
-</li>
-<li><p>事件订阅<br><em>业务使用CSPL_EventSubscribe订阅事件，当事件发布者在某个时候发布此事件后，<br>订阅者就会eventEntity模块中回调已注册的回调函数。</em></p>
-</li>
-<li><p>事件发布<br><em>业务使用CSPL_EventPublish发布事件，当事件类型不为进程内类型时，事件会被发送到事件服务器，之后事件服务器再转发此事件到订阅此事件的所有业务进程中。</em></p>
-</li>
-<li><p>事件服务器<br><em>位于lte_log进程中的eventEntity模块内，负责管理事件的订阅、取消订阅、事件转发操作。</em></p>
-</li>
-</ol>
-<p><strong>心跳机制及订阅恢复机制：</strong> 事件服务器每隔3s就会向所有已经注册的事件客户端发送一次心跳事件；若客户端连续超过3次没有收到心跳，重新向事件服务端注册业务地址。当重新注册成功，恢复心跳，则遍历客户端中LocalDatalist链表，将已订阅的事件重新向服务端订阅。（事件客户端、服务器均运行在cspl中的eventEntity模块内）</p>
-<h3 id="3-2日志服务"><a href="#3-2日志服务" class="headerlink" title="3.2日志服务"></a>3.2日志服务</h3><ol>
-<li><p>日志和注册日志；日志信息保存为本地文件，支持日志文件加密，压缩<br><em>CSPL_Log输出普通日志信息，保存到公用的日志文件中，如log.dat</em><br><em>CSPL_Slog输出的注册日志信息，保存到指定的日志文件中，由cspl_config.xml中registerLogCfg标记配置</em></p>
-</li>
-<li><p>支持设置日志过滤条件<br><em>可按照模块ID、日志级别、进程名称来过滤日志</em></p>
-</li>
-<li><p>实时输出到本地终端、tcp client显示（远端实时显示）<br><em>PC端日志服务器可通过tcp连接到lte_log上，实时获取日志信息，并保存到磁盘上</em></p>
-</li>
-<li><p>自定义类型日志-内存日志<br><em>CSPL_MemLog可自定义日志的消息格式，满足业务特殊的需求，由cspl_config.xml中memLogCfg标记配置</em></p>
-</li>
-<li><p>当日志文件大小超出配置值时，自动创建对应的压缩文件，并控制压缩文件的数量在配置值范围内</p>
-</li>
-<li><p>事件服务器目前部署在日志进程内</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">dataProcess</th>
-<th align="left">此线程处理tcp的链接，客户端请求获得日志实时数据</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">cfgProcess</td>
-<td align="left">此线程处理tcp的链接，解析传递过来的命令，实现查询日志记录；查询、设置当前过滤规则；查询、设置实时开关等配置功能</td>
-</tr>
-<tr>
-<td align="center">loopProcess</td>
-<td align="left">处理CSPL_Log、CSPL_Slog等相关函数产生的日志、注册日志，并依据实时开关配置决定是否实时输出日志信息；保存日志信息到磁盘上</td>
-</tr>
-<tr>
-<td align="center">mem_log_proc</td>
-<td align="left">处理CSPL_MemLog内存日志信息；保存内存日志到磁盘</td>
-</tr>
-<tr>
-<td align="center">log_tarSystemCmd</td>
-<td align="left">当日志文件大小大于配置值时，压缩日志文件，并记录压缩文件个数，删除超出maxSaveCounts（压缩保存文件最大个数）之外的压缩文件</td>
-</tr>
-<tr>
-<td align="center">cspl默认线程</td>
-<td align="left">处理cspl相关的一些操作， 如事件服务器等</td>
-</tr>
-<tr>
-<td align="center">clidebug默认线程</td>
-<td align="left">处理clidebug相关的一些操作，启动clidebug服务器</td>
-</tr>
-</tbody></table>
-<h3 id="3-3cliDebug"><a href="#3-3cliDebug" class="headerlink" title="3.3cliDebug"></a>3.3cliDebug</h3><p>clidebug用于在被调试进程运行时调试此进程，获取被调试进程的调试信息、内部运行状态等相关信息；clidebug配置文件为cspl_cliDebug_config.xml</p>
-<ol>
-<li>clidebug在连接被调试进程时，被调试进程必须已经在运行状态，必须明确被调试进程函数名称、调试ip、端口信息(若未指定，则使用配置文件中的配置值)       <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clidebug -t 127.0.0.1:62001 -p lte_oam</span><br></pre></td></tr></table></figure></li>
-<li>调用基本命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如ps、ls、ifconfig、pwd、cd、ping、quit、file、kill、help 、log_tool等</span><br></pre></td></tr></table></figure></li>
-<li>历史记录，可调试状态下支持20条命令记录，上下键切换</li>
-<li>全局变量打印及修改（宏和const变量除外）</li>
-<li>调用cspl自身维测接口(尚在开发中)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cspl_timer、cspl_event等</span><br></pre></td></tr></table></figure></li>
-<li>调用业务进程通过CSPL_CliDebug_RegCmd自行注册的函数或程序中以DebugInfo结尾的函数</li>
-<li>clidebug可以以多实例的方式</li>
-</ol>
-<h3 id="3-4黑盒子"><a href="#3-4黑盒子" class="headerlink" title="3.4黑盒子"></a>3.4黑盒子</h3><p>主要用于业务进程异常崩溃时记录现场堆栈信息，为定位问题提供分析依据。</p>
-<p><strong>支持的异常信号如下:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">信号</th>
-<th align="left">类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">SIGSEGV</td>
-<td align="left">段错误</td>
-</tr>
-<tr>
-<td align="center">SIGFPE</td>
-<td align="left">运算错误</td>
-</tr>
-<tr>
-<td align="center">SIGILL</td>
-<td align="left">非法指令</td>
-</tr>
-<tr>
-<td align="center">SIGABRT</td>
-<td align="left">终止</td>
-</tr>
-<tr>
-<td align="center">SIGBUS</td>
-<td align="left">总线访问异常，部分CPU在访问未对齐地址报错</td>
-</tr>
-</tbody></table>
-<p>输出内容如下:</p>
+<p>此时，从时钟便拥有了t1～t4这四个时间戳，由此可计算出主、从时钟间的往返总延时为[(t2 – t1) + (t4 – t3)]，由于网络是对称的，所以主、从时钟间的单向延时为[(t2 – t1) + (t4 – t3)] &#x2F; 2。因此，从时钟相对于主时钟的时钟偏差为：Offset &#x3D; (t2 – t1) - [(t2 – t1) + (t4 – t3)] &#x2F; 2 &#x3D; [(t2 – t1) - (t4 – t3) ] &#x2F; 2。</p>
+<p>此外，根据是否需要发送Follow_Up报文，请求应答机制又分为单步模式和双步模式两种：</p>
 <ul>
-<li>异常原因(信号名)。</li>
-<li>进程标示(进程pid,进程名)</li>
-<li>异常发生时间</li>
-<li>异常指令地址，异常访问的非法地址(仅对段错误有效)</li>
-<li>寄存器数据，寄存器显示寄存器名字，如EAX,EBX等</li>
-<li>异常调用栈，以及函数行号(优先使用dladdr 解析，若dladdr 解析失败，则使用addr2line解析行号)</li>
-<li>栈中部分数据</li>
+<li>在单步模式下，Sync报文的发送时间戳t1由Sync报文自己携带，不发送Follow_Up报文。</li>
+<li>在双步模式下，Sync报文的发送时间戳t1由Follow_Up报文携带。</li>
 </ul>
-<h3 id="3-5守护进程"><a href="#3-5守护进程" class="headerlink" title="3.5守护进程"></a>3.5守护进程</h3><p>lte_daemon进程配置文件为cspl_confing.xml， 其功能如下：</p>
+<h3 id="4-1-端延时机制"><a href="#4-1-端延时机制" class="headerlink" title="4.1 端延时机制"></a>4.1 端延时机制</h3><p><img src="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image-2.png" class="lazyload" data-srcset="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/image-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p>与请求应答机制相比，端延时机制不仅对转发延时进行扣除，还对上游链路的延时进行扣除。其实现过程如下：</p>
 <ol>
-<li><p>启动所有启动类型不为START_BY_SELF的SYS_APP(如lte_log)、USER_APP(业务)进程</p>
-</li>
-<li><p>等待子进程进入运行状态(最长等待时间: 500 ms * 120)<br><em>收集所有进程的CSPL_SIG_RUN_SYNC信号，进而判断进程是否已经进入运行态(APP_RUNNING)；并发送CSPL_SIG_RUN_SYNC给所有进程，完成进程状态双向确认。</em></p>
-</li>
-<li><p>进程保活(心跳信号)状态监控<br><em>注册daemonEntity模块监控进程心跳信号，若超出配置3次没有连续接收到心跳信号(CSPL_SIG_KEEPALIVE)，则依据restartMode的配置进行相应处理。</em></p>
-</li>
-<li><p>喂狗<br><em>看门狗使能的前提下创建喂狗线程daemon_feedWatchDog(高优先级线程)， 每隔2 s进行一次喂狗操作：bsp_watchdog_feed(g_daemonConfig.feedDogInternel);</em></p>
-</li>
-<li><p>监控所有运行的进程<br>创建监控线程daemon_monitorApp，执行daemon_WaitApp函数，一旦有业务进程退出，依据restartMode的配置采取动作：</p>
-<ol>
-<li>重启此进程 </li>
-<li>重启所有进程 </li>
-<li>重启系统 </li>
-<li>忽略不做处理。<br>记录重启进程的次数，当重启次数 &gt; maxRestartNum时， 强制重启系统</li>
+<li>主时钟向从时钟发送Sync报文，并记录发送时间t1；从时钟收到该报文后，记录接收时间t2。</li>
+<li>主时钟发送Sync报文之后，紧接着发送一个携带有t1的Follow_Up报文。</li>
+<li>从时钟向主时钟发送Pdelay_Req报文，用于发起反向传输延时的计算，并记录发送时间t3；主时钟收到该报文后，记录接收时间t4。</li>
+<li>主时钟收到Pdelay_Req报文之后，回复一个携带有t4的Pdelay_Resp报文，并记录发送时间t5；从时钟收到该报文后，记录接收时间t6。</li>
+<li>主时钟回复Pdelay_Resp报文之后，紧接着发送一个携带有t5的Pdelay_Resp_Follow_Up报文。</li>
 </ol>
-</li>
-</ol>
-<p><strong>lte_daemon中的信号及日志输出</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">信号</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">CSPL_SIG_KEEPALIVE</td>
-<td align="left">进程保活心跳信号;</td>
-</tr>
-<tr>
-<td align="center">CSPL_SIG_START_SYNC</td>
-<td align="left">进程启动同步信号；  若进程配置项startSync打开，则lte_damon在拉起此进程后，会循环检测此进程的startFinishFlag标志是否置位；  被拉起的进程在启动后通过向lte_damon进程发送CSPL_SIG_START_SYNC信号来置位此标志(CSPL_SendStartSyncAck函数)</td>
-</tr>
-<tr>
-<td align="center">CSPL_SIG_RUN_SYNC</td>
-<td align="left">进程运行同步信号；  lte_daemon进程与所拉起的进程在启动后，互相发送此信号，同步双方进程运行状态</td>
-</tr>
-<tr>
-<td align="center">CSPL_SIG_DAEMON_REBOOT</td>
-<td align="left">daemon重启信号；  lte_daemon接收到此信号后，调用daemon_reboot()函数重启系统</td>
-</tr>
-</tbody></table>
-<h3 id="3-6主备倒换"><a href="#3-6主备倒换" class="headerlink" title="3.6主备倒换"></a>3.6主备倒换</h3><p><strong>Opensaf简介：</strong> Opensaf是一个高可靠性分布式系统中间件，介于操作系统和用户应用层之间，屏蔽下层操作系统接口，向上提供各种服务。</p>
-<p><strong>CSPL集成Opensaf</strong></p>
-<ol>
-<li>Amf作为CSPL进程中的一个线程执行，对业务代码不可见。</li>
-<li>CSPL只向业务提供有限的对外API和数据结构来实现Amf功能。</li>
-<li>CSPL需要重新封装Amf和checkPoint功能，将两者结合起来使用，使用状态机的方式来处理。</li>
-</ol>
-<p>基站主备倒换场景<br><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-7.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p><em>主控板通过浮动IP与基带板交互，如上图，主控板的浮动IP为10.11.1.130，开始在CB1上设置，当发生主备倒换，CB1上关闭浮动IP，在CB2上设置浮动IP。相应的OAM会通知基带板的薄平台，基带板上有两个网卡，薄平台需要控制始终与当前主用主控板连接的网卡设置同一个IP地址，比如开始时设置的Eth2网卡IP地址为192.168.1.4，此时Eth3关闭，当收到OAM的切换通知，关闭Eth2，在Eth3上设置IP 192.168.1.4。</em></p>
-<h3 id="3-7常用算法"><a href="#3-7常用算法" class="headerlink" title="3.7常用算法"></a>3.7常用算法</h3><p>CSPL中常用算法库位于目录cspl&#x2F;src&#x2F;core&#x2F;ylib&#x2F;src中：</p>
-<ol>
-<li><p>位图算法<br><em>位于ylib-bitmap.c文件中；cspl中定时器的超时时间排序使用此算法，用于获取距离当前时间最短的定时器超时时间间隔。</em></p>
-</li>
-<li><p>crc算法<br><em>位于ylib-crc.c文件中；8位、16位、32位crc算法</em></p>
-</li>
-<li><p>哈希算法<br><em>位于ylib-hash.c文件中；根据关键码值(Key value)而直接进行访问的数据结构。即通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。</em></p>
-</li>
-<li><p>双链表算法<br><em>位于ylib-list.c文件中；cspl内部大量使用，如在qvars.modules双链表用于遍历此driver下所有的module信息</em></p>
-</li>
-<li><p>单链表算法<br><em>位于ylib-pool.c文件中；cspl中内存池qpool. list单链表用于链接所有qbuf结构体</em></p>
-</li>
-<li><p>优先级队列算法<br><em>位于ylib-squeue.c文件中；cspl中driver中的接收、发送队列中压入、弹出cspl消息时均使用此算法。</em></p>
-</li>
-<li><p>红黑树算法<br><em>位于ylib-tree.c文件中；一种自平衡二叉查找树，典型的用途是实现关联数组，获得较高的查找性能。cspl中QMODULE qvGetService( unsigned long name )函数使用了此算法，通过对qvcontext. services(YTREE)红黑树遍历来获取name所指向的qmodule结构体指针</em></p>
-</li>
-</ol>
-<h3 id="3-8数据库"><a href="#3-8数据库" class="headerlink" title="3.8数据库"></a>3.8数据库</h3><p>基于SQlite数据库。 SQLite是一个嵌入式数据库，和其他嵌入式DB(FastDB, extremeDB) 相比，DML、DDL操作均支持SQL语句，即最终提供给SQLite执行的是一个SQL语句，而不是一个数据结构。</p>
-<p>SQlite数据类型：NULL、INTEGER、REAL、TEXT、BLOB<br>基站数据类型：8&#x2F;16&#x2F;32&#x2F;64位有无符号整型、时间&#x2F;IP&#x2F;数组&#x2F;枚举多选&#x2F;密码&#x2F;数据&#x2F;文本类型、枚举&#x2F;布尔型</p>
-<p>数据库标识：数据库链接<br>表标识：表名和表ID（映射关系）<br>字段标识：字段名和字段ID（映射关系）</p>
-<p>应用程序和DBS的数据传递一条记录的时候，仅仅包括应用指定的字段值。<br>包括以下场景：插入,查询，删除，更新。</p>
-<p><img src="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-8.png" class="lazyload" data-srcset="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/image-8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p>此时，从时钟便拥有了t1～t6这六个时间戳，由此可计算出主、从时钟间的往返总延时为[(t4 – t3) + (t6 – t5)]，由于网络是对称的，所以主、从时钟间的单向延时为[(t4 – t3) + (t6 – t5)] &#x2F; 2。因此，从时钟相对于主时钟的时钟偏差为：Offset &#x3D; (t2 – t1) - [(t4 – t3) + (t6 – t5)] &#x2F; 2。</p>
+<p>此外，根据是否需要发送Follow_Up报文，端延时机制也分为单步模式和双步模式两种：</p>
+<ul>
+<li>在单步模式下，Sync报文的发送时间戳t1由Sync报文自己携带，不发送Follow_Up报文；而t5和t4的差值由Pdelay_Resp报文携带，不发送Pdelay_Resp_Follow_Up报文。</li>
+<li>在双步模式下，Sync报文的发送时间戳t1由Follow_Up报文携带，而t4和t5则分别由Pdelay_Resp报文和Pdelay_Resp_Follow_Up报文携带。</li>
+</ul>
 
   </div>
   
@@ -2936,10 +2692,10 @@ newchannel中创建的条件变量使用函数pthread_condattr_setclock(&amp;con
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-22T19:54:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-29T13:59:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 22, 2023</p>
+    <p>更新于：Aug 29, 2023</p>
   </a>
 </div>
 
@@ -2958,7 +2714,7 @@ newchannel中创建的条件变量使用函数pthread_condattr_setclock(&amp;con
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/&title=CSPL架构 - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/25/PTP%E7%AE%80%E4%BB%8B/&title=PTP简介 - 阿毛之家&summary="
           
           >
           
@@ -2970,7 +2726,7 @@ newchannel中创建的条件变量使用函数pthread_condattr_setclock(&amp;con
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/&title=CSPL架构 - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/25/PTP%E7%AE%80%E4%BB%8B/&title=PTP简介 - 阿毛之家&summary="
           
           >
           
@@ -2982,7 +2738,7 @@ newchannel中创建的条件变量使用函数pthread_condattr_setclock(&amp;con
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/&title=CSPL架构 - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/25/PTP%E7%AE%80%E4%BB%8B/&title=PTP简介 - 阿毛之家&summary="
           
           >
           
@@ -3015,26 +2771,15 @@ newchannel中创建的条件变量使用函数pthread_condattr_setclock(&amp;con
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>网络传输协议（一）</p>
-          <p class='content'>协议：TCP, UDP和SCTP
-TCP&#x2F;IP协议族如图：
-
-TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP
-1. ...</p>
+        <a class='prev' href='/2023/08/29/%E7%94%B5%E5%8F%A3%E4%B8%8E%E5%85%89%E5%8F%A3/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>电口与光口</p>
+          <p class='content'>1. 光口光口是服务器和网络中对各种光纤端口的统称，它是以光作为信息的承载介质。光口可能包含有从ST到SFF（小型化光纤连接器，以 MTRJ和LC为主）的各种光纤接口，因此在布线施工后期配备光纤...</p>
         </a>
       
       
-        <a class='next' href='/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/'>
-          <p class='title'>4G_LTE（一）<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>常用专业术语1.AS与NAS
-AS：接入层信令，是UE和接入网eUTRAN使用的信令，由基站来处理
-L1：物理层
-L2：数据链路层
-L3：网络层
-
-
-NAS：非接入层信令，是UE和核心网EPC之...</p>
+        <a class='next' href='/2023/08/24/volantis/'>
+          <p class='title'>volantis<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>常用指令12345hexo new &quot;FileName&quot;         #Create a new posthexo clean                  #Cle...</p>
         </a>
       
     </div>
@@ -3053,7 +2798,7 @@ NAS：非接入层信令，是UE和核心网EPC之...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/08/25/PTP%E7%AE%80%E4%BB%8B/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3095,7 +2840,7 @@ NAS：非接入层信令，是UE和核心网EPC之...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CSPL%E6%9E%B6%E6%9E%84%E7%AE%80%E8%BF%B0"><span class="toc-text">1.CSPL架构简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-CSPL%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="toc-text">2.CSPL设计思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E6%A8%A1%E5%9E%8B%E6%8A%BD%E8%B1%A1"><span class="toc-text">2.1模型抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">2.1.1数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-text">2.1.2运行模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6"><span class="toc-text">2.2通信机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E6%B6%88%E6%81%AF%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.3消息格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">2.4内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%BB%98%E8%AE%A4%E6%A8%A1%E5%9D%97"><span class="toc-text">2.5启动流程及默认模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">2.6版本信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-CSPL%E7%BB%84%E4%BB%B6"><span class="toc-text">3.CSPL组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E4%BA%8B%E4%BB%B6%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.1事件服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.2日志服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3cliDebug"><span class="toc-text">3.3cliDebug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4%E9%BB%91%E7%9B%92%E5%AD%90"><span class="toc-text">3.4黑盒子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="toc-text">3.5守护进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6%E4%B8%BB%E5%A4%87%E5%80%92%E6%8D%A2"><span class="toc-text">3.6主备倒换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-text">3.7常用算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">3.8数据库</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BD%91%E7%BB%9C%E6%97%B6%E9%92%9F%E5%90%8C%E6%AD%A5"><span class="toc-text">1 网络时钟同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-PTP%E5%8D%8F%E8%AE%AE"><span class="toc-text">2 PTP协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-PTP%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3 PTP基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-PTP%E5%9F%9F"><span class="toc-text">3.1 PTP域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-PTP%E7%AB%AF%E5%8F%A3"><span class="toc-text">3.2 PTP端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%97%B6%E9%92%9F%E8%8A%82%E7%82%B9"><span class="toc-text">3.3 时钟节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%B8%BB%E4%BB%8E%E5%85%B3%E7%B3%BB"><span class="toc-text">3.4 主从关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E6%9C%80%E4%BC%98%E6%97%B6%E9%92%9F"><span class="toc-text">3.5 最优时钟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-PTP%E5%90%8C%E6%AD%A5%E5%8E%9F%E7%90%86"><span class="toc-text">4 PTP同步原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E8%AF%B7%E6%B1%82%E5%BA%94%E7%AD%94%E6%9C%BA%E5%88%B6"><span class="toc-text">4.1 请求应答机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E7%AB%AF%E5%BB%B6%E6%97%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">4.1 端延时机制</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3704,7 +3449,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/09/CSPL架构/","name":"CSPL架构"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CSPL架构","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/","wordCount":0,"datePublished":"2023-08-09T05:18:02.000Z","dateModified":"2023-08-22T11:54:40.667Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/25/PTP简介/","name":"PTP简介"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PTP简介","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/25/PTP%E7%AE%80%E4%BB%8B/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/25/PTP%E7%AE%80%E4%BB%8B/","wordCount":0,"datePublished":"2023-08-25T01:47:48.000Z","dateModified":"2023-08-29T05:59:42.691Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
