@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/08/10/网络传输协议（一）/"/>
+  <link rel="canonical" href="http://example.com/2023/08/29/程序/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>网络传输协议（一） - 阿毛之家</title>
+  <title>程序 - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络传输协议（一）">
-<meta property="og:url" content="http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="程序">
+<meta property="og:url" content="http://example.com/2023/08/29/%E7%A8%8B%E5%BA%8F/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="协议：TCP, UDP和SCTP TCP&#x2F;IP协议族如图：  TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP 1. UDPUDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。 进程在套接字写入一个消息（应用层），该消息随后">
+<meta property="og:description" content="WebLMT消息下发123456789101112131415161718192021222324CSPL_MAIN(mml) -&gt; initSectServ(循环接收消息：消息进入) -&gt; checkMsgSock(区分消息为心跳和请求) -&gt; req_cnnd(请求消息)                         -- readcmd(读取前台数据) -&gt; han">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-08-10T02:55:30.000Z">
-<meta property="article:modified_time" content="2023-08-28T01:13:47.031Z">
+<meta property="article:published_time" content="2023-08-29T11:53:40.000Z">
+<meta property="article:modified_time" content="2023-08-29T11:57:51.213Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2513,7 +2513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/10/网络传输协议（一）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/29/程序/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2534,7 +2534,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        网络传输协议（一）
+        程序
       </h1>
       <div class='new-meta-box'>
         
@@ -2556,10 +2556,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-10T10:55:30+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-29T19:53:40+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 10, 2023</p>
+    <p>发布于：Aug 29, 2023</p>
   </a>
 </div>
 
@@ -2582,34 +2582,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><em><strong>协议：TCP, UDP和SCTP</strong></em></p>
-<p><strong>TCP&#x2F;IP协议族如图：</strong></p>
-<p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-3.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p>TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP</p>
-<h2 id="1-UDP"><a href="#1-UDP" class="headerlink" title="1. UDP"></a>1. UDP</h2><p><strong>UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。</strong></p>
-<p>进程在套接字写入一个消息（应用层），该消息随后被封装到一个UDP数据报（传输层），该数据报进而被封装到IP数据报（网络层），发往目的地。UDP不保证按需交付，而且不保证每个数据报只到达一次。</p>
-<p>不同于TCP无边界的字节流，UDP的数据报都有一个长度。</p>
-<p>无连接的。意味着一个UDP client和server之间不用存在长期关系。一个client可以创建一个UDP socket并用它前后发送多个数据报给多个服务器。同理，一个server也可以用一个socket来从不同的客户端接收数据。</p>
-<h2 id="2-TCP"><a href="#2-TCP" class="headerlink" title="2. TCP"></a>2. TCP</h2><p><strong>TCP（Transmission Control Protocol, 传输控制协议）。一个面向连接的协议，提供可靠的全双工字节流。使用的套接字为流套接字。</strong></p>
-<p>在描述TCP连接的建立和释放前，需要说明。网络编程中连接的建立和释放基本上都是由客户端（应用程序）主动发起。</p>
-<p><strong>TCP连接建立—三次握手：</strong></p>
-<p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-4.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p><strong>TCP连接释放—四次挥手：</strong></p>
-<p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-5.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<ol>
-<li>客户端主动调用close，向服务器发送一个FIN分节，表示自己的数据发送完毕；</li>
-<li>服务器收到FIN后返回ACK，表示自己收到客户端关闭连接的请求；【此时只有客户端连接关闭】</li>
-<li>服务器完成针对该客户端的服务后调用close关闭其服务进程。服务器向客户端发送一个FIN表示自己的服务应答数据发送完毕；</li>
-<li>客户端返回一个ACK表示确认。【此时双方连接都关闭】</li>
-</ol>
-<p><strong>TCP为应用程序提供面向连接的可靠服务，用于OM通道的传输承载。TCP通过如下特征来实现此目标：</strong></p>
-<ul>
-<li>差错控制：TCP通过累积的确认信息来报告丢失的分段或接收端分组的失序，通过超时和重传机制来确保应用程序数据的可靠接收。</li>
-<li>流量控制：TCP用滑动窗口流量控制机制来防止接收缓冲区的溢出。</li>
-<li>拥塞控制：TCP通过慢启动（slow start）、拥塞避免（congestion avoidance）和快速重传&#x2F;快速恢复（fast retransmit &#x2F; fast recovery）机制来适应路由器的阻塞，以获得高吞吐量。</li>
-</ul>
-<h2 id="3-SCTP"><a href="#3-SCTP" class="headerlink" title="3. SCTP"></a>3. SCTP</h2><p>SCTP（Stream Control Transmission Protocol，流控制传输协议）。一个提供可靠全双工关联的面向连接协议。“关联”区别于“连接”。关联是指两个系统间的通信，可能一个系统支持多宿（一个端口对应一组IP）；连接只涉及两个IP间的通信。</p>
-<p>SCTP通过在两个对等的SCTP终端间建立SCTP关联以实现面向连接的可靠传输。<br><strong>SCTP建立在IP层之上，是S1&#x2F;X2接口的信令承载协议。一条SCTP路径由四个参数共同标识：本端IP地址+本端SCTP端口号+对端IP地址+对端SCTP端口号。</strong></p>
+    <h2 id="WebLMT消息下发"><a href="#WebLMT消息下发" class="headerlink" title="WebLMT消息下发"></a>WebLMT消息下发</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">CSPL_MAIN(mml) -&gt; initSectServ(循环接收消息：消息进入) -&gt; checkMsgSock(区分消息为心跳和请求) -&gt; req_cnnd(请求消息) </span><br><span class="line">                        -- readcmd(读取前台数据) -&gt; handleStmt(处理) -- parse(解析数据) -- trans(有些复杂未了解) -&gt;&gt; SendQuery(进入发送队列，唤醒其他线程)</span><br><span class="line">    |</span><br><span class="line">CSPL_MAIN(lte_oam)		<span class="comment">//创建并注册各个实体(LayerEntity,CfgEntity)</span></span><br><span class="line">    |</span><br><span class="line">oam_layer_intf_process_msg(实体：LayerEntity) -&gt; CSPL_SendMsg		<span class="comment">//根据api_id，配置module_id并转发至对应的模块(oam_cfg_intf_process_msg)</span></span><br><span class="line">    |</span><br><span class="line">oam_cfg_intf_process_msg(实体：CfgEntity 注意：g_cfgMsgRspFunc-&gt;配置消息回应函数) -&gt; oam_cfg_msg_handle_req(全局变量未匹配到：cfg请求消息处理) </span><br><span class="line">                        -&gt; oam_cfg_msg_handle(全局变量未匹配到：处置配置消息) -- oam_cfg_msg_handle_add_del_mod(根据enOpCode执行对应的功能：增删改查配置消息) </span><br><span class="line">                        -&gt; oam_cfg_get_moduleID_and_apiID(根据motype获取module_id和api_id) -&gt; CSPL_SendMsg  -- oam_cfg_ha_active_send_add_del_mod_msg </span><br><span class="line">                        -&gt; CSPL_HA_SendBoardMsg(发送板间消息) -- oam_cfg_ha_enb_db_submit(修改数据库)</span><br><span class="line">    |</span><br><span class="line">CSPL_MAIN(lte_ncp) -&gt; ncp_init_oam_driver -- ncp_init_oam_msg_addr -- ncp_init_oam_msg_driver		<span class="comment">//创建并注册NCP与OAM通信实体(oam_msg_entity)</span></span><br><span class="line">    |</span><br><span class="line">ncp_process_msg(实体：oam_msg_entity) -&gt; ncp_oam_process_msg(根据type_id执行对应的功能：oam ipc消息处理) -&gt; ncp_process_cfg_from_oam(根据api_id执行对应的功能：OAM配置消息处理) </span><br><span class="line">                        -&gt; ncp_send_cfg_to_agent(根据宏IS_AGENT_CFG执行对应功能：NCP发送配置信息给AGENT) -&gt; CSPL_SendMsg</span><br><span class="line">    |</span><br><span class="line">CSPL_MAIN(lte_agent) -&gt; agent_init_oam_driver -- agent_init_oam_msg_addr -- agent_init_oam_msg_driver		<span class="comment">//创建并注册AGENT与OAM通信实体，创建agent_mo_proc_thread等线程</span></span><br><span class="line">    |</span><br><span class="line">agent_process_msg(实体：agent_msg_entity) -&gt; agent_ncp_process_msg(根据type_id执行对应的功能：ncp ipc消息处理) -&gt; agent_process_cfg_from_oam(根据api_id执行对应的功能：OAM配置消息处理) </span><br><span class="line">                        -&gt; agent_send_rsp_to_ncp(AGENT发送应答消息给NCP) -&gt; CSPL_SendMsg</span><br><span class="line">    |</span><br><span class="line">agent_mo_proc_thread(MO处理线程) -&gt; agent_cfg_mo_proc_in_thread(MO配置信息处理) -- agent_add_devip(addFunc&gt;pAgentDeal&gt;agent_mo_ctx 。agent添加DEVIP) </span><br><span class="line">                        -&gt; kernel_add_del_static_devip(系统内核添加删除静态DEVIP) -&gt; EXEC_CAM_AND_FAIL_RETRY -&gt; exec_cmd(执行命令行命令) -(失败)- agent_add_re_deal_item</span><br></pre></td></tr></table></figure>
+
+<h2 id="agent消息回传"><a href="#agent消息回传" class="headerlink" title="agent消息回传"></a>agent消息回传</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">agent_send_rsp_to_ncp(封装消息头 和 有效载体，并进行发送)</span><br><span class="line">    |</span><br><span class="line">ncp_process_msg -&gt; ncp_agent_process_msg</span><br><span class="line">    |</span><br><span class="line">oam_layer_intf_process_msg</span><br><span class="line">    |</span><br><span class="line">oam_cfg_intf_process_msg</span><br><span class="line">    |</span><br><span class="line">OAM_SendMsgToNmsOrMML</span><br><span class="line">    |</span><br><span class="line">initSectServ</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2647,10 +2622,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-28T09:13:47+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-29T19:57:51+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 28, 2023</p>
+    <p>更新于：Aug 29, 2023</p>
   </a>
 </div>
 
@@ -2669,7 +2644,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/&title=网络传输协议（一） - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/29/%E7%A8%8B%E5%BA%8F/&title=程序 - 阿毛之家&summary="
           
           >
           
@@ -2681,7 +2656,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/&title=网络传输协议（一） - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/29/%E7%A8%8B%E5%BA%8F/&title=程序 - 阿毛之家&summary="
           
           >
           
@@ -2693,7 +2668,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/&title=网络传输协议（一） - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/29/%E7%A8%8B%E5%BA%8F/&title=程序 - 阿毛之家&summary="
           
           >
           
@@ -2726,22 +2701,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/08/11/4G-LTE%EF%BC%88%E4%BA%8C%EF%BC%89/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>4G-LTE（二）</p>
-          <p class='content'>2. LTE
-EPC与eNodeB之间采用S1接口。S1接口是基站（无线网）与核心网之间的接口，包含两种接口：
-S1-U：用户面，用来连接eNB与SGW，用于传送业务数据
-S1-MME：用来连接...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/'>
-          <p class='title'>CSPL架构<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1.CSPL架构简述CSPL的定位和目的：
-
-CSPL位于业务与操作系统之间
-屏蔽操作系统的复杂接口，提供统一的操作方式，使得业务进程只需要关心本身业务，从而加速协议栈的开发
-CSPL核心是以l...</p>
+        <a class='next' href='/2023/08/29/%E7%94%B5%E5%8F%A3%E4%B8%8E%E5%85%89%E5%8F%A3/'>
+          <p class='title'>电口与光口<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1. 光口光口是服务器和网络中对各种光纤端口的统称，它是以光作为信息的承载介质。光口可能包含有从ST到SFF（小型化光纤连接器，以 MTRJ和LC为主）的各种光纤接口，因此在布线施工后期配备光纤...</p>
         </a>
       
     </div>
@@ -2760,7 +2723,7 @@ CSPL核心是以l...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/08/29/%E7%A8%8B%E5%BA%8F/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2802,7 +2765,7 @@ CSPL核心是以l...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-UDP"><span class="toc-text">1. UDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TCP"><span class="toc-text">2. TCP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-SCTP"><span class="toc-text">3. SCTP</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebLMT%E6%B6%88%E6%81%AF%E4%B8%8B%E5%8F%91"><span class="toc-text">WebLMT消息下发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#agent%E6%B6%88%E6%81%AF%E5%9B%9E%E4%BC%A0"><span class="toc-text">agent消息回传</span></a></li></ol>
   </div>
 </section>
 
@@ -3411,7 +3374,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/10/网络传输协议（一）/","name":"网络传输协议（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"网络传输协议（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/","wordCount":0,"datePublished":"2023-08-10T02:55:30.000Z","dateModified":"2023-08-28T01:13:47.031Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/29/程序/","name":"程序"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"程序","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/29/%E7%A8%8B%E5%BA%8F/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/29/%E7%A8%8B%E5%BA%8F/","wordCount":0,"datePublished":"2023-08-29T11:53:40.000Z","dateModified":"2023-08-29T11:57:51.213Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
