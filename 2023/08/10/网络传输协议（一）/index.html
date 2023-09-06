@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-08-10T02:55:30.000Z">
-<meta property="article:modified_time" content="2023-08-28T01:13:47.031Z">
+<meta property="article:modified_time" content="2023-09-06T09:33:57.711Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2158,7 +2158,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693883983414),
+    lastupdate: new Date(1693993269116),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2588,11 +2588,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><strong>TCP&#x2F;IP协议族如图：</strong></p>
 <p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-3.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
 <p>TCP&#x2F;IP协议族除了TCP和IP协议外，还包括许多其他协议。如UDP, ICMP, ARP, SCTP</p>
-<h2 id="1-UDP"><a href="#1-UDP" class="headerlink" title="1. UDP"></a>1. UDP</h2><p><strong>UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。</strong></p>
+<h1 id="1-UDP"><a href="#1-UDP" class="headerlink" title="1. UDP"></a>1. UDP</h1><p><strong>UDP（User Datagram Protocol，用户数据报协议）。一个无连接协议，尽力而为传输。传输单位UDP数据报。使用的套接字为数据报套接字。</strong></p>
 <p>进程在套接字写入一个消息（应用层），该消息随后被封装到一个UDP数据报（传输层），该数据报进而被封装到IP数据报（网络层），发往目的地。UDP不保证按需交付，而且不保证每个数据报只到达一次。</p>
 <p>不同于TCP无边界的字节流，UDP的数据报都有一个长度。</p>
 <p>无连接的。意味着一个UDP client和server之间不用存在长期关系。一个client可以创建一个UDP socket并用它前后发送多个数据报给多个服务器。同理，一个server也可以用一个socket来从不同的客户端接收数据。</p>
-<h2 id="2-TCP"><a href="#2-TCP" class="headerlink" title="2. TCP"></a>2. TCP</h2><p><strong>TCP（Transmission Control Protocol, 传输控制协议）。一个面向连接的协议，提供可靠的全双工字节流。使用的套接字为流套接字。</strong></p>
+<h1 id="2-TCP"><a href="#2-TCP" class="headerlink" title="2. TCP"></a>2. TCP</h1><p><strong>TCP（Transmission Control Protocol, 传输控制协议）。一个面向连接的协议，提供可靠的全双工字节流。使用的套接字为流套接字。</strong></p>
 <p>在描述TCP连接的建立和释放前，需要说明。网络编程中连接的建立和释放基本上都是由客户端（应用程序）主动发起。</p>
 <p><strong>TCP连接建立—三次握手：</strong></p>
 <p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-4.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
@@ -2610,8 +2610,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>流量控制：TCP用滑动窗口流量控制机制来防止接收缓冲区的溢出。</li>
 <li>拥塞控制：TCP通过慢启动（slow start）、拥塞避免（congestion avoidance）和快速重传&#x2F;快速恢复（fast retransmit &#x2F; fast recovery）机制来适应路由器的阻塞，以获得高吞吐量。</li>
 </ul>
-<h2 id="3-SCTP"><a href="#3-SCTP" class="headerlink" title="3. SCTP"></a>3. SCTP</h2><p>SCTP（Stream Control Transmission Protocol，流控制传输协议）。一个提供可靠全双工关联的面向连接协议。“关联”区别于“连接”。关联是指两个系统间的通信，可能一个系统支持多宿（一个端口对应一组IP）；连接只涉及两个IP间的通信。</p>
-<p>SCTP通过在两个对等的SCTP终端间建立SCTP关联以实现面向连接的可靠传输。<br><strong>SCTP建立在IP层之上，是S1&#x2F;X2接口的信令承载协议。一条SCTP路径由四个参数共同标识：本端IP地址+本端SCTP端口号+对端IP地址+对端SCTP端口号。</strong></p>
+<h1 id="3-SCTP（Stream-Control-Transport-Protocol）流控制传输协议"><a href="#3-SCTP（Stream-Control-Transport-Protocol）流控制传输协议" class="headerlink" title="3. SCTP（Stream Control Transport Protocol）流控制传输协议"></a>3. SCTP（Stream Control Transport Protocol）流控制传输协议</h1><h2 id="3-1-传统传输协议的弊端："><a href="#3-1-传统传输协议的弊端：" class="headerlink" title="3.1 传统传输协议的弊端："></a>3.1 传统传输协议的弊端：</h2><p>TCP 由于严格的顺序递交和确认重传带来了额外的传输流量和较大的时延<br>UDP 又因为过于简单，缺少必要的可靠传输保证，容易导致网络拥塞甚至崩溃</p>
+<h2 id="3-2-SCTP-的特征"><a href="#3-2-SCTP-的特征" class="headerlink" title="3.2 SCTP 的特征"></a>3.2 SCTP 的特征</h2><ol>
+<li>内建多地址主机支持：SCTP 中的一对连接称为关联（Association），关联两端的主机节点（Endpoint）可以有多个网络地址，从而使一个 SCTP 关联可以通过多条网络路径进行数据传输。   </li>
+<li>保留应用层消息边界：SCTP 保留上层数据信息的边界，上层数据信息称为“消息”，传输的基本单位为有意义的数据段。</li>
+<li>单个关联（Association）多流机制：SCTP 允许用户在每个关联中定义子流，数据在子流内按序传输。</li>
+</ol>
+<h2 id="3-3-SCTP-数据包格式"><a href="#3-3-SCTP-数据包格式" class="headerlink" title="3.3 SCTP 数据包格式"></a>3.3 SCTP 数据包格式</h2><p>SCTP 提供了灵活的数据块格式，每个 SCTP 数据报都由一个 Common Header（基本首部）和若干 Chunk（数据块）组成。</p>
+<p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-2.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p>基本首部提供了源端口和目的端口，用于完成典型的传输层协议端口复用功能；<br>验证标记对一个 SCTP 连接提供安全验证，保存着在 SCTP 通过握手建立连接时第一次交换的初始标签的值。在一次连接中，任何 SCTP 数据包若不包含这样一个标签，到达时会被接收端丢弃。</p>
+<p>校验和是对整个数据包的校验。</p>
+<p>在首部后是一系列 Chunks （块）。Chunk 是组成 SCTP 报文的基本结构，有多种类型，不同类型的块可用来传输不同的控制信息或数据；同时首部中的 F(flags) 标记字段提供了额外的控制信息。</p>
+<p>丰富的 Chunk 类型使 SCTP 可以采用不同类型的 Chunk 实现各种传输控制机制。</p>
+<h2 id="3-4-SCTP-的消息（message）和流（stream）"><a href="#3-4-SCTP-的消息（message）和流（stream）" class="headerlink" title="3.4 SCTP 的消息（message）和流（stream）"></a>3.4 SCTP 的消息（message）和流（stream）</h2><p>SCTP 协议将上层数据信息称为用户消息（user message），在传输中 SCTP 保留上层数据信息的边界，传输的基本单位为有意义的数据段。因此 SCTP 称为“面向消息”的传输协议。</p>
+<p><img src="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-1.png" class="lazyload" data-srcset="/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/image-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<p>SCTP 提出了数据流的概念，每个数据块中不仅有传输序号 TSN，还携带了流标识 SID（Stream ID）和流序号 SSN（Stream Sequence Number）。</p>
+<p>用户可以在一个连接中建立多个流，每个流分配一个 SID，每个流队列中的用户数据由流序号 SSN 表明顺序。</p>
+<p>在 SCTP 中引入一个连接多个流的机制解决了使用 TCP 传输时出现的队首阻塞问题。</p>
+<p>允许某些应用程序根据需求将逻辑上不相关的数据分离为多个流进行传输往往很有意义，如一个多媒体视频会议系统中的多路语音信号在各自的流中传输，彼此之间不会互相阻塞。</p>
+<p>flags 字段共三位，其中的 U 位为是否按序递交用户消息的标志，B、E 位分别代表本 Data Chunk 包含一个用户消息的开始或结束，如果本数据块包含一条完整的用户消息，则 BE 都置为 1，如包含消息中间的内容则都置为 0。</p>
+<p>SCTP 提供按序递交和无序递交两种选择，Data Chunk 中的flags 字段中的 U 位就表明了该数据所需要的服务是按序递交或是无序递交。当采用无序递交时，SCTP 就具有了类似 UDP 的一些特征，能够尽快的将数据发往上层，适用于一些实时应用。</p>
+<p>实际上，通过引入流和无序递交机制，SCTP 实现了严格有序传输（类似 TCP），部分有序传输（部分流内无序递交）和无序传输（类似 UDP）。</p>
 
   </div>
   
@@ -2649,10 +2668,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-28T09:13:47+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-06T17:33:57+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 28, 2023</p>
+    <p>更新于：Sep 6, 2023</p>
   </a>
 </div>
 
@@ -2804,7 +2823,7 @@ CSPL核心是以l...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-UDP"><span class="toc-text">1. UDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TCP"><span class="toc-text">2. TCP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-SCTP"><span class="toc-text">3. SCTP</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E4%BC%A0%E7%BB%9F%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%8A%E7%AB%AF%EF%BC%9A"><span class="toc-text">3.1 传统传输协议的弊端：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-SCTP-%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">3.2 SCTP 的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-SCTP-%E6%95%B0%E6%8D%AE%E5%8C%85%E6%A0%BC%E5%BC%8F"><span class="toc-text">3.3 SCTP 数据包格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-SCTP-%E7%9A%84%E6%B6%88%E6%81%AF%EF%BC%88message%EF%BC%89%E5%92%8C%E6%B5%81%EF%BC%88stream%EF%BC%89"><span class="toc-text">3.4 SCTP 的消息（message）和流（stream）</span></a></li></ol>
   </div>
 </section>
 
@@ -3765,7 +3784,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/10/网络传输协议（一）/","name":"网络传输协议（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"网络传输协议（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/","wordCount":0,"datePublished":"2023-08-10T02:55:30.000Z","dateModified":"2023-08-28T01:13:47.031Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/10/网络传输协议（一）/","name":"网络传输协议（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"网络传输协议（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/10/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%80%EF%BC%89/","wordCount":0,"datePublished":"2023-08-10T02:55:30.000Z","dateModified":"2023-09-06T09:33:57.711Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
