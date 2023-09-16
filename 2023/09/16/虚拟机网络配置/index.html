@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/08/08/4g-lte（一）/"/>
+  <link rel="canonical" href="http://example.com/2023/09/16/虚拟机网络配置/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>4G_LTE（一） - 阿毛之家</title>
+  <title>虚拟机网络配置 - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="4G_LTE（一）">
-<meta property="og:url" content="http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="虚拟机网络配置">
+<meta property="og:url" content="http://example.com/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="常用专业术语1.AS与NAS AS：接入层信令，是UE和接入网eUTRAN使用的信令，由基站来处理 L1：物理层 L2：数据链路层 L3：网络层   NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途径接入网eUTRAN，但基站不作分析 传输层、会话层、表示层、应用层    2.LTE 4G LTE一般特指TD-LTE制式网络  4G -&gt; LTE     4G+ -&gt;">
+<meta property="og:description" content="NAT 模式 如果主机可以上网，虚拟机可以上网 虚拟机之间不能ping通 虚拟机可以ping通主机（此时ping虚拟机的网关，即是ping主机） 主机不能ping通虚拟机  桥接模式 如果主机可以上网，虚拟机可以上网 虚拟机之间可以ping通 虚拟机可以ping通主机 主机可以ping通虚拟机 以上各点基于一个前提：主机可以上网 如果主机不可以上网，所有1-4特点均无  Host-Only Ada">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-08-08T07:14:27.000Z">
-<meta property="article:modified_time" content="2023-09-07T09:38:40.357Z">
+<meta property="article:published_time" content="2023-09-16T05:40:07.000Z">
+<meta property="article:modified_time" content="2023-09-16T05:44:56.022Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2515,7 +2515,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/4G-LTE（一）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/16/虚拟机网络配置/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2536,7 +2536,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        4G_LTE（一）
+        虚拟机网络配置
       </h1>
       <div class='new-meta-box'>
         
@@ -2553,29 +2553,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  
-  
-  
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%82%A8%E5%A4%87/">储备</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%82%A8%E5%A4%87/" itemprop="url"><span itemprop="name">储备</span></a>
-      </span>
-    
-  </div>
-  
-
 
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-08T15:14:27+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-16T13:40:07+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 8, 2023</p>
+    <p>发布于：Sep 16, 2023</p>
   </a>
 </div>
 
@@ -2598,45 +2584,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="常用专业术语"><a href="#常用专业术语" class="headerlink" title="常用专业术语"></a>常用专业术语</h2><h3 id="1-AS与NAS"><a href="#1-AS与NAS" class="headerlink" title="1.AS与NAS"></a>1.AS与NAS</h3><ul>
-<li>AS：接入层信令，是UE和接入网eUTRAN使用的信令，由基站来处理<ul>
-<li>L1：物理层</li>
-<li>L2：数据链路层</li>
-<li>L3：网络层</li>
+    <h2 id="NAT-模式"><a href="#NAT-模式" class="headerlink" title="NAT 模式"></a>NAT 模式</h2><ul>
+<li>如果主机可以上网，虚拟机可以上网</li>
+<li>虚拟机之间不能ping通</li>
+<li>虚拟机可以ping通主机（此时ping虚拟机的网关，即是ping主机）</li>
+<li>主机不能ping通虚拟机</li>
 </ul>
-</li>
-<li>NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途径接入网eUTRAN，但基站不作分析<ul>
-<li>传输层、会话层、表示层、应用层</li>
+<h2 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h2><ul>
+<li>如果主机可以上网，虚拟机可以上网</li>
+<li>虚拟机之间可以ping通</li>
+<li>虚拟机可以ping通主机</li>
+<li>主机可以ping通虚拟机</li>
+<li>以上各点基于一个前提：主机可以上网</li>
+<li>如果主机不可以上网，所有1-4特点均无</li>
 </ul>
-</li>
+<h2 id="Host-Only-Adapter-模式"><a href="#Host-Only-Adapter-模式" class="headerlink" title="Host-Only Adapter 模式"></a>Host-Only Adapter 模式</h2><ul>
+<li>虚拟机不可以上网</li>
+<li>虚拟机之间可以ping通</li>
+<li>虚拟机可以ping通主机（注意虚拟机与主机通信是通过主机的名为VirtualBox Host-Only Network的网卡，因此ip是该网卡ip 192.168.56.1，而不是你现在正在上网所用的ip）</li>
+<li>主机可以ping通虚拟机</li>
 </ul>
-<h3 id="2-LTE"><a href="#2-LTE" class="headerlink" title="2.LTE"></a>2.LTE</h3><ul>
-<li><p>4G LTE一般特指TD-LTE制式网络</p>
-</li>
-<li><p>4G -&gt; LTE     4G+ -&gt; LTE-A</p>
-</li>
-<li><p>LTE通常分为FDD LTE和TDD LTE</p>
-<ul>
-<li>TDD，时分双工(Time Division Duplexing)</li>
-<li>FDD，频分双工(Frequency Division Duplexing)</li>
-<li>单工，发送端只能发送，接收端只能接受（广播）</li>
-<li>半双工，双方都能发送和接送，但同一时间只能一方发送，一方接收（对讲机）</li>
-<li>全双工，可以同时发送和接收（手机）</li>
-</ul>
-</li>
-<li><p>3G UMTS组网架构分为4层：终端（UE）、基站（NodeB）、无线网络控制器（RNC）、核心网（CN）</p>
-<p><img src="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-1.png" class="lazyload" data-srcset="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-</li>
-<li><p>4G LTE组网架构分为3层：终端（UE）、基站（eNodeB）、核心网（EPC）</p>
-<p><img src="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-2.png" class="lazyload" data-srcset="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-</li>
-</ul>
-<h3 id="3-RRU与BBU"><a href="#3-RRU与BBU" class="headerlink" title="3.RRU与BBU"></a>3.RRU与BBU</h3><ul>
-<li>RRU：Radio Remote Unit 射频拉远单元</li>
-<li>BBU：Building Baseband Unit 室内基带处理单元</li>
-<li>RRU和BBU之间需要用光纤连接。一个BBU可以支持多个RRU。采用BBU+RRU多通道方案，可以很好地解决大型场馆的室内复盖。</li>
-</ul>
-<p>基带BBU集中放置在机房，RRU可安装至楼层，BBU与RRU之间采用光纤传输，RRU再通过同轴电缆及功分器(耦合器)等连接至天线，即主干采用光纤，支路采用同轴电缆</p>
 
   </div>
   
@@ -2674,10 +2641,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-07T17:38:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-16T13:44:56+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 7, 2023</p>
+    <p>更新于：Sep 16, 2023</p>
   </a>
 </div>
 
@@ -2696,7 +2663,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/&title=4G_LTE（一） - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/&title=虚拟机网络配置 - 阿毛之家&summary="
           
           >
           
@@ -2708,7 +2675,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/&title=4G_LTE（一） - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/&title=虚拟机网络配置 - 阿毛之家&summary="
           
           >
           
@@ -2720,7 +2687,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/&title=4G_LTE（一） - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/&title=虚拟机网络配置 - 阿毛之家&summary="
           
           >
           
@@ -2753,19 +2720,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CSPL架构</p>
-          <p class='content'>1.CSPL架构简述CSPL的定位和目的：
-
-CSPL位于业务与操作系统之间
-屏蔽操作系统的复杂接口，提供统一的操作方式，使得业务进程只需要关心本身业务，从而加速协议栈的开发
-CSPL核心是以l...</p>
+        <a class='prev' href='/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>VPP成长之路</p>
+          <p class='content'>1. VPP安装
+安装Ubuntu：版本：Ubuntu 20.04.4
+保证ubuntu可上网（虚拟机网络配置）
+更新apt，sudo apt-get update -y
+安装git ，sudo...</p>
         </a>
       
       
-        <a class='next' href='/2023/08/07/hello-world/'>
-          <p class='title'>Hello World<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        <a class='next' href='/2023/09/08/%E4%BA%91%E5%A4%96%E5%AE%89%E8%A3%85%E9%A1%B9%E7%9B%AE%E7%A8%8B%E5%BA%8F/'>
+          <p class='title'>云外安装项目程序<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>12345678910111213141516171819202122232425ftp://192.168.154.201/BWT-3800_eNB_V3.5_X86_64_B2/eNB_bu...</p>
         </a>
       
     </div>
@@ -2784,7 +2751,7 @@ CSPL核心是以l...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2826,7 +2793,7 @@ CSPL核心是以l...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD"><span class="toc-text">常用专业术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AS%E4%B8%8ENAS"><span class="toc-text">1.AS与NAS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-LTE"><span class="toc-text">2.LTE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RRU%E4%B8%8EBBU"><span class="toc-text">3.RRU与BBU</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NAT-%E6%A8%A1%E5%BC%8F"><span class="toc-text">NAT 模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="toc-text">桥接模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Host-Only-Adapter-%E6%A8%A1%E5%BC%8F"><span class="toc-text">Host-Only Adapter 模式</span></a></li></ol>
   </div>
 </section>
 
@@ -3787,7 +3754,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/储备/","name":"储备"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/08/4G-LTE（一）/","name":"4G_LTE（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4G_LTE（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/","wordCount":0,"datePublished":"2023-08-08T07:14:27.000Z","dateModified":"2023-09-07T09:38:40.357Z","articleSection":"储备","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/09/16/虚拟机网络配置/","name":"虚拟机网络配置"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"虚拟机网络配置","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/","wordCount":0,"datePublished":"2023-09-16T05:40:07.000Z","dateModified":"2023-09-16T05:44:56.022Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

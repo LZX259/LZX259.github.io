@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/08/08/4g-lte（一）/"/>
+  <link rel="canonical" href="http://example.com/2023/09/16/vpp成长之路/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>4G_LTE（一） - 阿毛之家</title>
+  <title>VPP成长之路 - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="4G_LTE（一）">
-<meta property="og:url" content="http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="VPP成长之路">
+<meta property="og:url" content="http://example.com/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="常用专业术语1.AS与NAS AS：接入层信令，是UE和接入网eUTRAN使用的信令，由基站来处理 L1：物理层 L2：数据链路层 L3：网络层   NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途径接入网eUTRAN，但基站不作分析 传输层、会话层、表示层、应用层    2.LTE 4G LTE一般特指TD-LTE制式网络  4G -&gt; LTE     4G+ -&gt;">
+<meta property="og:description" content="1. VPP安装 安装Ubuntu：版本：Ubuntu 20.04.4 保证ubuntu可上网（虚拟机网络配置） 更新apt，sudo apt-get update -y 安装git ，sudo apt install git 安装vim， sudo apt install vim 下载vpp源码 ：git clone http:&#x2F;&#x2F;gerrit.fd.io&#x2F;r&#x2F;vpp   很慢很慢（git到的路">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-08-08T07:14:27.000Z">
-<meta property="article:modified_time" content="2023-09-07T09:38:40.357Z">
+<meta property="article:published_time" content="2023-09-16T06:35:53.000Z">
+<meta property="article:modified_time" content="2023-09-16T09:28:09.658Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2515,7 +2515,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/4G-LTE（一）/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/16/VPP成长之路/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2536,7 +2536,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        4G_LTE（一）
+        VPP成长之路
       </h1>
       <div class='new-meta-box'>
         
@@ -2558,10 +2558,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%82%A8%E5%A4%87/">储备</a>
+    <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%82%A8%E5%A4%87/" itemprop="url"><span itemprop="name">储备</span></a>
+        <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url"><span itemprop="name">教程</span></a>
       </span>
     
   </div>
@@ -2572,10 +2572,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-08T15:14:27+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-09-16T14:35:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 8, 2023</p>
+    <p>发布于：Sep 16, 2023</p>
   </a>
 </div>
 
@@ -2598,45 +2598,182 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="常用专业术语"><a href="#常用专业术语" class="headerlink" title="常用专业术语"></a>常用专业术语</h2><h3 id="1-AS与NAS"><a href="#1-AS与NAS" class="headerlink" title="1.AS与NAS"></a>1.AS与NAS</h3><ul>
-<li>AS：接入层信令，是UE和接入网eUTRAN使用的信令，由基站来处理<ul>
-<li>L1：物理层</li>
-<li>L2：数据链路层</li>
-<li>L3：网络层</li>
-</ul>
-</li>
-<li>NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途径接入网eUTRAN，但基站不作分析<ul>
-<li>传输层、会话层、表示层、应用层</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-LTE"><a href="#2-LTE" class="headerlink" title="2.LTE"></a>2.LTE</h3><ul>
-<li><p>4G LTE一般特指TD-LTE制式网络</p>
-</li>
-<li><p>4G -&gt; LTE     4G+ -&gt; LTE-A</p>
-</li>
-<li><p>LTE通常分为FDD LTE和TDD LTE</p>
+    <h1 id="1-VPP安装"><a href="#1-VPP安装" class="headerlink" title="1. VPP安装"></a>1. VPP安装</h1><ol>
+<li>安装Ubuntu：版本：Ubuntu 20.04.4</li>
+<li>保证ubuntu可上网（虚拟机网络配置）</li>
+<li>更新apt，sudo apt-get update -y</li>
+<li>安装git ，sudo apt install git</li>
+<li>安装vim， sudo apt install vim</li>
+<li>下载vpp源码 ：git clone <a target="_blank" rel="noopener" href="http://gerrit.fd.io/r/vpp">http://gerrit.fd.io/r/vpp</a>   很慢很慢（git到的路径为当前路径）</li>
+<li>安装一些必要的软件：sudo apt install make ， sudo apt install make-guile ，sudo apt install openssh-server</li>
+<li>下载关系依赖：make install-dep ，  make dpdk-install-dev  （下载时没成功，不影响），make install-ext-deps #时间较长</li>
+<li>编译：make build （也可执行：.&#x2F;extras&#x2F;vagrant&#x2F;build.sh）、make pkg-deb</li>
+<li>自动配置大页：dpkg -i build-root&#x2F;*.deb</li>
+<li>安装DPDK<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install meson</span><br><span class="line">sudo apt install -y python3-pyelftools python-pyelftools</span><br><span class="line">git <span class="built_in">clone</span> https://gitee.com/yaozuluo/dpdk.git   </span><br><span class="line"><span class="built_in">cd</span> dpdk</span><br><span class="line">meson -Dexamples=all build</span><br></pre></td></tr></table></figure></li>
+<li>启动VPP，暂且不用配置其他文件，只是看到VPP运行<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> vpp</span><br><span class="line">systemctl start  vpp</span><br><span class="line">systemctl status vpp.service</span><br></pre></td></tr></table></figure></li>
+<li>测试是否安装成功：sudo vppctl</li>
+</ol>
+<h1 id="2-创建虚拟网口（主机与VPP之间）"><a href="#2-创建虚拟网口（主机与VPP之间）" class="headerlink" title="2. 创建虚拟网口（主机与VPP之间）"></a>2. 创建虚拟网口（主机与VPP之间）</h1><p>让VPP简单地跑通，使用命令创建网口，开启主机到VPP的通道，一般采用veth技术。</p>
+<p>创建虚拟网口连接到vpp内部建立通讯：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip <span class="built_in">link</span> add vhost <span class="built_in">type</span> veth peer name vpp      <span class="comment"># 创建成对的虚拟网口vhost及vpp</span></span><br><span class="line">ip <span class="built_in">link</span> <span class="built_in">set</span> vhost up</span><br><span class="line">ip <span class="built_in">link</span> <span class="built_in">set</span> vpp up                             <span class="comment"># 开启它俩</span></span><br><span class="line">ip addr add 10.0.0.1/24 dev vhost              <span class="comment"># 为主机侧指定ip地址</span></span><br></pre></td></tr></table></figure>
+<p>VPP指令:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create host-interface name vpp              <span class="comment"># 创建主机接口，用vpp</span></span><br><span class="line"><span class="built_in">set</span> int state host-vpp up                   <span class="comment"># host-vpp是vpp生成的，可以用show int确认名称</span></span><br><span class="line"><span class="built_in">set</span> int ip address host-vpp 10.0.0.2/24     <span class="comment"># 指定ip地址</span></span><br><span class="line">show int                                    <span class="comment"># 能看到接收发送的一些数据统计信息</span></span><br></pre></td></tr></table></figure>
+<p>在主机用ping 10.0.0.2应该能通了，并且vpp里面通过show int能看到统计数据在变化；<br>主机通过tcpdump应该能抓到包。<br>VPP中使用trace跟踪：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">trace add af-packet-input 10                <span class="comment"># 添加跟踪</span></span><br><span class="line">show trace                                  <span class="comment"># 查看跟踪信息</span></span><br><span class="line">clear trace                                 <span class="comment"># 清除跟踪缓存区</span></span><br><span class="line">show ip neighbors                           <span class="comment"># 检查ARP表</span></span><br><span class="line">show ip fib                                 <span class="comment"># 查看路由表</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-源码"><a href="#3-源码" class="headerlink" title="3. 源码"></a>3. 源码</h1><h2 id="3-1-源码目录"><a href="#3-1-源码目录" class="headerlink" title="3.1 源码目录"></a>3.1 源码目录</h2><table>
+<thead>
+<tr>
+<th align="center">目录名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">build-data</td>
+<td align="left">构建元数据</td>
+</tr>
+<tr>
+<td align="center">build-root</td>
+<td align="left">构建输出目录</td>
+</tr>
+<tr>
+<td align="center">doxygen</td>
+<td align="left">文档生成器配置</td>
+</tr>
+<tr>
+<td align="center">dpdk</td>
+<td align="left">DPDK补丁与构建基础设施</td>
+</tr>
+<tr>
+<td align="center">extras&#x2F;libmemif</td>
+<td align="left">memif的客户端库</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;examples</td>
+<td align="left">VPP示例代码</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;svm</td>
+<td align="left">VPP的捆绑插件目录</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;tests</td>
+<td align="left">共享虚拟内存分配库（Shared virtual memory）</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vat</td>
+<td align="left">独立测试（不属于测试套件）</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vlib</td>
+<td align="left">VPP应用程序库</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vlibapi</td>
+<td align="left">VPP API库</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vlibsocket</td>
+<td align="left">VPP Socket I&#x2F;O</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vnet</td>
+<td align="left">VPP网络</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vpp</td>
+<td align="left">VPP应用程序</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vpp-api</td>
+<td align="left">VPP应用程序API绑定</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vppinfra</td>
+<td align="left">VPP核心库</td>
+</tr>
+<tr>
+<td align="center">src&#x2F;vpp&#x2F;api</td>
+<td align="left">尚未重新放置在新地方的API绑定</td>
+</tr>
+<tr>
+<td align="center">test</td>
+<td align="left">单元测试和Python测试工具</td>
+</tr>
+</tbody></table>
+<h2 id="3-2-源码分类"><a href="#3-2-源码分类" class="headerlink" title="3.2 源码分类"></a>3.2 源码分类</h2><p>vpp数据平面分为四个不同的层：</p>
 <ul>
-<li>TDD，时分双工(Time Division Duplexing)</li>
-<li>FDD，频分双工(Frequency Division Duplexing)</li>
-<li>单工，发送端只能发送，接收端只能接受（广播）</li>
-<li>半双工，双方都能发送和接送，但同一时间只能一方发送，一方接收（对讲机）</li>
-<li>全双工，可以同时发送和接收（手机）</li>
+<li>基础架构层：包括vppinfra，vlib，svm和二进制api库。源码：&#x2F;src&#x2F;{vppinfra, vlib, svm, vlibapi, vlibmemory}</li>
+<li>通用网络协议栈层：vnet。源码：&#x2F;src&#x2F;vnet</li>
+<li>应用程序shell：vpp。源码：&#x2F;src&#x2F;vpp</li>
+<li>日益丰富的数据平面插件。源码：&#x2F;src&#x2F;plugins</li>
 </ul>
+<h3 id="3-2-1-Vppinfra："><a href="#3-2-1-Vppinfra：" class="headerlink" title="3.2.1 Vppinfra："></a>3.2.1 Vppinfra：</h3><p>Vppinfra是一个基本的c-library服务集合，可以构建直接在裸机上运行的独立程序。它提供高性能动态数组，hash表，位图，高精度实时时钟支持，精细的日志记录和数据结构序列化。</p>
+<ol>
+<li><p>Vectors</p>
+<p> Vppinfra向量是无处不在的动态调整大小的数组，具有用户定义的“头”。许多vpppinfra数据结构（例如hash，堆，池）是具有各种不同头的向量。</p>
+ <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">内存布局如下所示：</span><br><span class="line">                    User header (optional, uword aligned)</span><br><span class="line">                    Alignment padding (if needed)</span><br><span class="line">                    Vector length in elements</span><br><span class="line">User&#x27;s pointer  -&gt;  Vector element 0</span><br><span class="line">                    Vector element 1</span><br><span class="line">                    ...</span><br><span class="line">                    Vector element N-1</span><br></pre></td></tr></table></figure>
+<p> 如上所示，向量API处理指向向量第0个元素的指针。 如果指为空针则说明向量的有效长度为0。</p>
+<p> 为了避免内存分配器的分配失败，通常在保留内存分配的同时将向量的长度重置为零。通过vec_reset_length（v）宏将向量长度字段设置为零。</p>
+<p> 通常情况下不存在用户标头。用户头允许在vppinfra向量上构建其他数据结构。用户可以通过vec * _aligned宏指定数据元素的对齐方式。</p>
+<p> 向量元素可以是任何C语言数据结构类型，例如 （int，double，struct ）。许多宏都用_a类型的变体支持向量数据的对齐，而_h类型的变体支持非零长度向量头。_ha类型的变体支持以上两者。</p>
+<p> 头或对齐相关宏类型的变体使用不一致将导致延迟以及各种失败问题。</p>
 </li>
-<li><p>3G UMTS组网架构分为4层：终端（UE）、基站（NodeB）、无线网络控制器（RNC）、核心网（CN）</p>
-<p><img src="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-1.png" class="lazyload" data-srcset="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<li><p>Bitmaps</p>
+<p> Vppinfra位图是动态的，使用vppinfra向量API来构建。</p>
 </li>
-<li><p>4G LTE组网架构分为3层：终端（UE）、基站（eNodeB）、核心网（EPC）</p>
-<p><img src="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-2.png" class="lazyload" data-srcset="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/image-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
+<li><p>Pools</p>
+<p> Vppinfra池结合了Vectors和Bitmaps，可以快速分配和释放具有独立生命周期的固定大小的数据结构。池非常适合给每个会话分配结构。</p>
 </li>
-</ul>
-<h3 id="3-RRU与BBU"><a href="#3-RRU与BBU" class="headerlink" title="3.RRU与BBU"></a>3.RRU与BBU</h3><ul>
-<li>RRU：Radio Remote Unit 射频拉远单元</li>
-<li>BBU：Building Baseband Unit 室内基带处理单元</li>
-<li>RRU和BBU之间需要用光纤连接。一个BBU可以支持多个RRU。采用BBU+RRU多通道方案，可以很好地解决大型场馆的室内复盖。</li>
-</ul>
-<p>基带BBU集中放置在机房，RRU可安装至楼层，BBU与RRU之间采用光纤传输，RRU再通过同轴电缆及功分器(耦合器)等连接至天线，即主干采用光纤，支路采用同轴电缆</p>
+<li><p>Hashes</p>
+<p> Vppinfra提供了几种不通类型的哈希。</p>
+<p> 在涉及数据包分类&#x2F;会话查找相关的数据平面问题是通常使用&#x2F;src&#x2F;vppinfra&#x2F;bihash_templat.[ch] 有界索引可扩展哈希值。Bihashes是线程安全的。，不需要读取锁。只需要一个简单的自旋锁确保在同一时刻一次只有一个线程写入一个entry。</p>
+<p> 在涉及需要字符串精确匹配的控制平面代码中通常使用&#x2F;src&#x2F;vppinfra&#x2F;hash.[ch]中的原始vppinfra哈希。</p>
+</li>
+<li><p>Format</p>
+<p> Vppinfra中的Format大致相当于c语言中的printf。</p>
+<p> Format的第一个参数是（u8 *）向量，它附加当前格式化操作的结果。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">调用示例：</span><br><span class="line">u8 * result;</span><br><span class="line"></span><br><span class="line">result = format (<span class="number">0</span>, <span class="string">&quot;junk = %d, &quot;</span>, junk);</span><br><span class="line">result = format (result, <span class="string">&quot;more junk = %d\n&quot;</span>, more_junk);</span><br></pre></td></tr></table></figure>
+<p> NULL指针是完全正确的0长度向量。格式返回（u8 *）向量，而不是C字符串。如果要打印（u8 *）向量，需要使用“％v”格式字符串。</p>
+<p> 如果想要一个（u8 *）向量同时也是一个正确的C字符串，可以使用以下任一方案：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">u8 * <span class="title function_">format_junk</span> <span class="params">(u8 * s, va_list *va)</span></span><br><span class="line">&#123;</span><br><span class="line">    junk = va_arg (va, u32);</span><br><span class="line">    s = format (s, <span class="string">&quot;%s&quot;</span>, junk);</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result = format (<span class="number">0</span>, <span class="string">&quot;junk = %U, format_junk, &quot;</span>This is some junk<span class="string">&quot;);</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Unformat</p>
+<p> Vppinfra的unformat与scanf有点类似，但是更加的通用。</p>
+<p> 从C-string或（u8 *）向量初始化unformat_input_t，然后通过unformat（）进行解析，如下所示：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unformat_input_t</span> input;</span><br><span class="line"></span><br><span class="line">unformat_init_string (&amp;input, <span class="string">&quot;&lt;some-C-string&gt;&quot;</span>);</span><br><span class="line"><span class="comment">/* or */</span></span><br><span class="line">unformat_init_vector (&amp;input, &lt;u8-<span class="built_in">vector</span>&gt;);</span><br></pre></td></tr></table></figure>
+<p> 然后循环解析各个元素：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (unformat_check_input (&amp;input) != UNFORMAT_END_OF_INPUT) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (unformat (&amp;input, <span class="string">&quot;value1 %d&quot;</span>, &amp;value1))</span><br><span class="line">        ;<span class="comment">/* unformat sets value1 */</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (unformat (&amp;input, <span class="string">&quot;value2 %d&quot;</span>, &amp;value2)</span><br><span class="line">        ;<span class="comment">/* unformat sets value2 */</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> clib_error_return (<span class="number">0</span>, <span class="string">&quot;unknown input &#x27;%U&#x27;&quot;</span>, format_unformat_error, </span><br><span class="line">                                input);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></li>
+<li><p>Vppinfra errors and warnings</p>
+<p> vpp数据平面中的许多函数都具有clib_error_t *类型的返回值。如果返回NULL则clib_error_t *表示“正确，没有错误”。</p>
+<p> Clib_warning（<format-args>）是一种添加调试的便捷方式；clib警告预置的功能：自动添加行信息以明确定位消息源。</format-args></p>
+</li>
+<li><p>Serialization</p>
+<p> Vppinfra序列化功能支持允许程序员轻松地序列化和反序列化复杂的数据结构。底层的原始序列化&#x2F;反序列化函数使用网络字节序，因此在小端主机上序列化并在大端主机上反序列化不会存在结构问题。</p>
+</li>
+<li><p>Event-logger, graphical event log viewer</p>
+<p> vppinfra事件记录器提供轻量级的精确时间戳（低于100ns）事件记录服务。代码：&#x2F;src&#x2F;vppinfra&#x2F;{elog.c, elog.h}</p>
+<p> 序列化支持可以轻松保存并合并一组事件日志。</p>
+<p> 典型的事件定义和日志记录调用如下所示：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ELOG_TYPE_DECLARE (e) = </span><br><span class="line">&#123;</span><br><span class="line">    .format = <span class="string">&quot;get_or_create: %s&quot;</span>,</span><br><span class="line">    .format_args = <span class="string">&quot;t4&quot;</span>,</span><br><span class="line">    .n_enum_strings = <span class="number">2</span>,</span><br><span class="line">    .enum_strings = &#123; <span class="string">&quot;old&quot;</span>, <span class="string">&quot;new&quot;</span>, &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p> 如下所示：“.format”字段可能包含以下一个或多个实例：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i1 - <span class="number">8</span>-bit <span class="type">unsigned</span> integer</span><br><span class="line">i2 - <span class="number">16</span>-bit <span class="type">unsigned</span> integer</span><br><span class="line">i4 - <span class="number">32</span>-bit <span class="type">unsigned</span> integer</span><br><span class="line">i8 - <span class="number">64</span>-bit <span class="type">unsigned</span> integer</span><br><span class="line">f4 - <span class="type">float</span></span><br><span class="line">f8 - <span class="type">double</span></span><br><span class="line">s - 以<span class="literal">NULL</span>结尾的字符串</span><br><span class="line">sN - N字节字符数组</span><br><span class="line">t1,<span class="number">2</span>,<span class="number">4</span> - 每一个事件枚举ID</span><br><span class="line">T4 - 事件日志字符串表的偏移量</span><br></pre></td></tr></table></figure>
+<p> vpp引擎有几个事件日志的调试CLI：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vpp<span class="meta"># event-logger clear</span></span><br><span class="line">vpp<span class="meta"># event-logger save <span class="string">&lt;filename&gt;</span>       # for security, writes into /tmp/<span class="string">&lt;filename&gt;</span>.</span></span><br><span class="line">                                        # &lt;filename&gt; must not contain <span class="string">&#x27;.&#x27;</span> or <span class="string">&#x27;/&#x27;</span> characters</span><br><span class="line">vpp<span class="meta"># show event-logger [all] [<span class="string">&lt;nnn&gt;</span>]    # display the event log</span></span><br><span class="line">                                        <span class="meta"># by default, the last 250 entries</span></span><br></pre></td></tr></table></figure>
+<p> 事件日志默认为128K条entry。 命令行参数“vlib {elog-events <nnn>}”配置事件日志的entry大小。</nnn></p>
+</li>
+</ol>
+<h3 id="3-2-2-VLIB："><a href="#3-2-2-VLIB：" class="headerlink" title="3.2.2 VLIB："></a>3.2.2 VLIB：</h3><p>Vlib提供向量处理支持，包括图形节点调度，可靠多播支持，超轻量级协作多任务线程，CLI，.DLL插件支持，物理内存和Linux epoll支持。</p>
+<ol>
+<li><p>Node Graph Initialization</p>
+<p> vlib数据包处理应用程序总是定义一组图节点来处理数据包。通过VLIB_REGISTER_NODE宏来构造vlib_node_registration_t数据结构。在运行时，框架将这样的注册集处理成有向图。在运行时向图添加节点很容易，该框架不支持删除节点。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">vlib_node_registration_t</span>的类型成员函数如下：</span><br><span class="line"></span><br><span class="line">VLIB_NODE_TYPE_PRE_INPUT：在所有其他节点类型之前运行</span><br><span class="line">VLIB_NODE_TYPE_INPUT：在pre_input节点之后尽可能的经常运行</span><br><span class="line">VLIB_NODE_TYPE_INTERNAL：仅当通过添加待处理帧进行处理而明确地使其可运行时</span><br><span class="line">VLIB_NODE_TYPE_PROCESS：只有在明确地设置为runnable时。“进程”节点实际上是协作的多任务线程。</span><br><span class="line">                        他们必须在相当短的时间后明确暂停。</span><br></pre></td></tr></table></figure>
+<p> 要准确理解图节点调度程序，请阅读：&#x2F;src&#x2F;vlib&#x2F;main.c:vlib_main_loop</p>
+</li>
+<li><p>Graph node dispatcher</p>
+<p> Vlib_main_loop（）调度图节点。</p>
+</li>
+</ol>
 
   </div>
   
@@ -2674,10 +2811,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-07T17:38:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-16T17:28:09+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 7, 2023</p>
+    <p>更新于：Sep 16, 2023</p>
   </a>
 </div>
 
@@ -2696,7 +2833,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/&title=4G_LTE（一） - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/&title=VPP成长之路 - 阿毛之家&summary="
           
           >
           
@@ -2708,7 +2845,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/&title=4G_LTE（一） - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/&title=VPP成长之路 - 阿毛之家&summary="
           
           >
           
@@ -2720,7 +2857,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/&title=4G_LTE（一） - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/&title=VPP成长之路 - 阿毛之家&summary="
           
           >
           
@@ -2753,19 +2890,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/08/09/CSPL%E6%9E%B6%E6%9E%84/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CSPL架构</p>
-          <p class='content'>1.CSPL架构简述CSPL的定位和目的：
-
-CSPL位于业务与操作系统之间
-屏蔽操作系统的复杂接口，提供统一的操作方式，使得业务进程只需要关心本身业务，从而加速协议栈的开发
-CSPL核心是以l...</p>
+        <a class='prev' href='/2023/09/16/VPP%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>VPP常用命令</p>
+          <p class='content'>接口类123create host-interface name vpp          # 创建一个主机接口vppset interface state host-vpp up       ...</p>
         </a>
       
       
-        <a class='next' href='/2023/08/07/hello-world/'>
-          <p class='title'>Hello World<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        <a class='next' href='/2023/09/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/'>
+          <p class='title'>虚拟机网络配置<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>NAT 模式
+如果主机可以上网，虚拟机可以上网
+虚拟机之间不能ping通
+虚拟机可以ping通主机（此时ping虚拟机的网关，即是ping主机）
+主机不能ping通虚拟机
+
+桥接模式
+如果主机可...</p>
         </a>
       
     </div>
@@ -2784,7 +2924,7 @@ CSPL核心是以l...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2826,7 +2966,7 @@ CSPL核心是以l...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD"><span class="toc-text">常用专业术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AS%E4%B8%8ENAS"><span class="toc-text">1.AS与NAS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-LTE"><span class="toc-text">2.LTE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RRU%E4%B8%8EBBU"><span class="toc-text">3.RRU与BBU</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95"><span class="toc-text">3.1 源码目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%BA%90%E7%A0%81%E5%88%86%E7%B1%BB"><span class="toc-text">3.2 源码分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-Vppinfra%EF%BC%9A"><span class="toc-text">3.2.1 Vppinfra：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-VLIB%EF%BC%9A"><span class="toc-text">3.2.2 VLIB：</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3787,7 +3927,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/储备/","name":"储备"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/08/4G-LTE（一）/","name":"4G_LTE（一）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"4G_LTE（一）","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/08/4G-LTE%EF%BC%88%E4%B8%80%EF%BC%89/","wordCount":0,"datePublished":"2023-08-08T07:14:27.000Z","dateModified":"2023-09-07T09:38:40.357Z","articleSection":"储备","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/教程/","name":"教程"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/09/16/VPP成长之路/","name":"VPP成长之路"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"VPP成长之路","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/09/16/VPP%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/","wordCount":0,"datePublished":"2023-09-16T06:35:53.000Z","dateModified":"2023-09-16T09:28:09.658Z","articleSection":"教程","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
