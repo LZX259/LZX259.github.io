@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/10/09/平滑升级/"/>
+  <link rel="canonical" href="http://example.com/2023/12/05/红黑树原理/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>平滑升级 - 阿毛之家</title>
+  <title>红黑树原理 - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="平滑升级">
-<meta property="og:url" content="http://example.com/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/index.html">
+<meta property="og:title" content="红黑树原理">
+<meta property="og:url" content="http://example.com/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="环境变量 123ROOT&#x3D;&quot;&#x2F;LTE&quot;WORDIR&#x3D;&#x2F;LTE&#x2F;user&#x2F;Area0&#x2F;binexport LD_LIBRARY_PATH&#x3D;$ROOT&#x2F;user&#x2F;Area0&#x2F;bin:$ROOT&#x2F;user&#x2F;Area0&#x2F;lib  备份当前版本mo、数据库信息 1&#x2F;LTE&#x2F;user&#x2F;Area0&#x2F;bin&#x2F;lte_cfg_smooth &#x2F;LTE&#x2F;user&#x2F;Area0&#x2F;cfg&#x2F; &#x2F;LTE&#x2F;u">
+<meta property="og:description" content="1. 红黑树简介红黑树是一种自平衡的二叉查找树，是一种高效的查找树。它是由 Rudolf Bayer 于 1978 年发明，在当时被称为平衡二叉 B 树( symmetric binary B-trees )。后来，在1978年被 Leo J. Guibas 和 Robert Sedgewick 修改为如今的红黑树。红黑树具有良好的效率，它可在 O(logN) 时间内完成查找、增加、删除等操作。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-10-09T09:08:32.000Z">
-<meta property="article:modified_time" content="2023-10-12T02:54:34.646Z">
+<meta property="article:published_time" content="2023-12-05T08:04:01.000Z">
+<meta property="article:modified_time" content="2023-12-05T09:30:56.700Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2517,7 +2517,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/09/平滑升级/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/05/红黑树原理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2538,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        平滑升级
+        红黑树原理
       </h1>
       <div class='new-meta-box'>
         
@@ -2560,10 +2560,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+    <a class="category-link" href="/categories/%E5%82%A8%E5%A4%87/">储备</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%B7%A5%E4%BD%9C/" itemprop="url"><span itemprop="name">工作</span></a>
+        <a href="/categories/%E5%82%A8%E5%A4%87/" itemprop="url"><span itemprop="name">储备</span></a>
       </span>
     
   </div>
@@ -2574,10 +2574,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-10-09T17:08:32+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-12-05T16:04:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 9, 2023</p>
+    <p>发布于：Dec 5, 2023</p>
   </a>
 </div>
 
@@ -2600,32 +2600,183 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <ol>
-<li><p>环境变量</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ROOT=<span class="string">&quot;/LTE&quot;</span></span><br><span class="line">WORDIR=/LTE/user/Area0/bin</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$ROOT</span>/user/Area0/bin:<span class="variable">$ROOT</span>/user/Area0/lib</span><br></pre></td></tr></table></figure>
+    <h1 id="1-红黑树简介"><a href="#1-红黑树简介" class="headerlink" title="1. 红黑树简介"></a>1. 红黑树简介</h1><p>红黑树是一种自平衡的二叉查找树，是一种高效的查找树。它是由 Rudolf Bayer 于 1978 年发明，在当时被称为平衡二叉 B 树( symmetric binary B-trees )。后来，在1978年被 Leo J. Guibas 和 Robert Sedgewick 修改为如今的红黑树。红黑树具有良好的效率，它可在 O(logN) 时间内完成查找、增加、删除等操作。</p>
+<h1 id="2-红黑树的特性"><a href="#2-红黑树的特性" class="headerlink" title="2. 红黑树的特性"></a>2. 红黑树的特性</h1><p><strong>节点：</strong>  </p>
+<ul>
+<li>parent：父节点</li>
+<li>sibling：兄弟节点</li>
+<li>uncle：叔父节点（ parent 的兄弟节点）</li>
+<li>grand：祖父节点（ parent 的父亲节点）</li>
+</ul>
+<p><strong>特性：</strong></p>
+<ol>
+<li>节点是红色或黑色</li>
+<li>根节点是黑色</li>
+<li>叶子节点都是黑色（ NULL 空节点才是叶子节点）</li>
+<li>红色节点的子节点都是黑色<ul>
+<li>红色节点的父节点都是黑色</li>
+<li>从根节点到叶子节点的所有路径上不能有 2 个连续的红色节点</li>
+</ul>
 </li>
-<li><p>备份当前版本mo、数据库信息</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/LTE/user/Area0/bin/lte_cfg_smooth /LTE/user/Area0/cfg/ /LTE/user/Area1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编译生成btscfg_mostruct_OBBU_V3.5.02.07d.json，另外还有MO及数据库的5个文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /work/lzx/lte/ResourceFile/build_for_cfg/exe.win32-3.4</span><br><span class="line">python3 LambertMain4_2.py x86 macro OBBU_V3.5.02.07d</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编译版本平滑升级表格，生成smoothVer.json</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /work/lzx/lte/resourceFile/build_for_smooth</span><br><span class="line">./createSmoothVer.sh macro eNodeB OBBU_V3.5.02.07d <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编译平滑代码</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /work/lzx/lte/TRM/trm_build</span><br><span class="line">./build_lte.sh lte_trm_common tdd arm64 macro</span><br><span class="line">./build_lte.sh lte_trm_common tdd intel_64 macro</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>（可能需要）编译报错，找不到头文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /work/lzx/lte/PUB/include/mo/eNodeB</span><br><span class="line"><span class="built_in">mv</span> dev dev_x86</span><br></pre></td></tr></table></figure></li>
-<li><p>编译生成lte_cfg_smooth文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /work/lzx/lte/PLATFORM/oam_build</span><br><span class="line">./build.sh clean oam</span><br><span class="line">./build.sh oam tdd arm macro</span><br><span class="line">./build.sh oam tdd x86_64 macro</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置平滑</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">替换文件</span><br><span class="line">/LTE/user/Area0/bin/lte_cfg_smooth /LTE/user/Area1/cfgSmooth/cfg/ /LTE/user/Area0/cfg/ /LTE/user/Area0/moStruct/ <span class="literal">true</span></span><br><span class="line">报错时，恢复文件重新执行步骤2。</span><br></pre></td></tr></table></figure></li>
+<li>从任一节点到叶子节点的所有路径都包含相同数目的黑色节点</li>
 </ol>
-<p>文件路径</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lte_cfg_smooth: /work/lzx/lte/PLATFORM/oam/build/bin/x86/</span><br><span class="line"></span><br><span class="line">btscfg_mostruct_OBBU_V3.5.02.07d.json: /LTE/user/Area0/moStruct</span><br><span class="line">smoothVer.json: /LTE/user/Area0/cfg</span><br><span class="line">lte_cfg_smooth: /LTE/user/Area0/bin</span><br></pre></td></tr></table></figure>
+<p><strong>分类：</strong><br>红黑树与四阶 B 树具有等价特性，我们将红黑树转化为四阶 B 树后进行分类。</p>
+<ul>
+<li>红黑红</li>
+<li>黑红</li>
+<li>红黑</li>
+<li>黑</li>
+</ul>
+<h1 id="3-红黑树的操作"><a href="#3-红黑树的操作" class="headerlink" title="3. 红黑树的操作"></a>3. 红黑树的操作</h1><h2 id="3-1-旋转操作"><a href="#3-1-旋转操作" class="headerlink" title="3.1 旋转操作"></a>3.1 旋转操作</h2><ul>
+<li>左旋</li>
+<li>右旋</li>
+</ul>
+<p>左旋是将某个节点 A 旋转为其右孩子节点 B 的左孩子节点 C，如果节点 C 存在，则节点 C 作为节点 A 的左孩子；<br>右旋是将某个节点 A 旋转为其左孩子节点 B 的右孩子节点 C，如果节点 C 存在，则节点 C 作为节点 A 的有孩子。</p>
+<h2 id="3-2-插入操作"><a href="#3-2-插入操作" class="headerlink" title="3.2 插入操作"></a>3.2 插入操作</h2><p>根据红黑树的分类，插入（从叶子节点插入）分为 12 种情况，这12种均满足 1，2，3，5 特性。其中有 4 种满足特性 4，这 4 种情况插入操作不需要做任何处理，对其余 8 种需要做特殊处理。</p>
+<h3 id="3-2-1-RR-和-LL-情况"><a href="#3-2-1-RR-和-LL-情况" class="headerlink" title="3.2.1 RR 和 LL 情况"></a>3.2.1 RR 和 LL 情况</h3><ul>
+<li>RR情况：父节点为祖父节点的右节点，插入节点为父节点的右节点</li>
+<li>LL情况：父节点为祖父节点的左节点，插入节点为父节点的左节点</li>
+</ul>
+<p><strong>判定条件：</strong> uncle 不是红色节点。<br>这里的两种情况，他们的插入节点都是没有叔父节点的，所以叔父节点也不可能是红色。</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>parent 染成黑色，grand 染成红色。</li>
+<li>grand 进行单旋操作。<ul>
+<li>LL：右旋转。</li>
+<li>RR：左旋转。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-2-LR-和-RL-情况"><a href="#3-2-2-LR-和-RL-情况" class="headerlink" title="3.2.2 LR 和 RL 情况"></a>3.2.2 LR 和 RL 情况</h3><ul>
+<li>RL情况：父节点为祖父节点的右节点，插入节点为父节点的左节点</li>
+<li>LR情况：父节点为祖父节点的左节点，插入节点为父节点的右节点</li>
+</ul>
+<p><strong>判定条件：</strong> uncle 不是红色节点。<br>这两种情况的插入节点也是没有叔父节点的。</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>插入节点染成黑色，grand 染成红色。</li>
+<li>进行双旋操作。<ul>
+<li>LR：parent 左旋转， grand 右旋转。</li>
+<li>RL：parent 右旋转， grand 左旋转。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-3-上溢的-LL-情况"><a href="#3-2-3-上溢的-LL-情况" class="headerlink" title="3.2.3 上溢的 LL 情况"></a>3.2.3 上溢的 LL 情况</h3><ul>
+<li>上溢LL情况：父节点为祖父节点的左节点，插入节点为父节点的左节点。并且构成的新的B树节点已经超过了B树节点容量大小范围。</li>
+</ul>
+<p><strong>判定条件：</strong> uncle 是红色节点。<br>满足这个条件的就都是上溢的情况，上溢的修复只需要染色，不需要旋转。</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>parent、uncle 染成黑色。</li>
+<li>grand 向上合并。<ul>
+<li>将向上合并的grand染成红色，相对上一层，就当做是新添加的节点，再次来一遍插入情况的判断，进行处理。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-4-上溢的-RR-情况"><a href="#3-2-4-上溢的-RR-情况" class="headerlink" title="3.2.4 上溢的 RR 情况"></a>3.2.4 上溢的 RR 情况</h3><ul>
+<li>上溢RR情况：父节点为祖父节点的右节点，插入节点为父节点的右节点。并且构成的新的B树节点已经超过了B树节点容量大小范围。</li>
+</ul>
+<p><strong>判定条件：</strong> uncle 是红色节点。<br>满足这个条件的就都是上溢的情况，上溢的修复只需要染色，不需要旋转。</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>parent、uncle 染成黑色。</li>
+<li>grand 向上合并。<ul>
+<li>染成红色（其实染成红色就已经是完成了向上合并，因为祖父节点和祖父节点的父节点的连接指向并没有变），当做是新添加的节点进行处理。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-5-上溢的-LR-情况"><a href="#3-2-5-上溢的-LR-情况" class="headerlink" title="3.2.5 上溢的 LR 情况"></a>3.2.5 上溢的 LR 情况</h3><ul>
+<li>上溢LR情况：父节点为祖父节点的左节点，插入节点为父节点的右节点。并且构成的新的B树节点已经超过了B树节点容量大小范围。</li>
+</ul>
+<p><strong>判定条件：</strong> uncle 是红色节点。<br>满足这个条件的就都是上溢的情况，上溢的修复只需要染色，不需要旋转。</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>parent、uncle 染成黑色。</li>
+<li>grand 向上合并。<ul>
+<li>染成红色，当做是新添加的节点进行处理。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-6-上溢的-RL-情况"><a href="#3-2-6-上溢的-RL-情况" class="headerlink" title="3.2.6 上溢的 RL 情况"></a>3.2.6 上溢的 RL 情况</h3><ul>
+<li>上溢RL情况：父节点为祖父节点的右节点，插入节点为父节点的左节点。并且构成的新的B树节点已经超过了B树节点容量大小范围。</li>
+</ul>
+<p><strong>判定条件：</strong> uncle 是红色节点。<br>满足这个条件的就都是上溢的情况，上溢的修复只需要染色，不需要旋转。</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>parent、uncle 染成黑色。</li>
+<li>grand 向上合并。<ul>
+<li>染成黑色，当做是新添加的节点进行处理。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-7-插入情况总结"><a href="#3-2-7-插入情况总结" class="headerlink" title="3.2.7 插入情况总结"></a>3.2.7 插入情况总结</h3><p>插入一共有12种情况：</p>
+<ol>
+<li><p>插入节点的父节点是黑色的情况有4种。<br>这种情况仍然会维持红黑树的性质，则不需要进行额外处理。</p>
+</li>
+<li><p>插入节点的父节点是红色的情况有8种。<br>这种情况不满足红黑树的性质4，需要进行额外的修复处理，这8种情况中：</p>
+<ul>
+<li>叔父节点不是红色的情况有4种。<br> 这些情况都是非上溢，需要通过重新染色和旋转来进行修复</li>
+<li>叔父节点是红色的情况有4种。<br> 这些情况都是上溢的，只需要通过祖父节点上溢合并和染色即可完成修复</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-3-删除操作"><a href="#3-3-删除操作" class="headerlink" title="3.3 删除操作"></a>3.3 删除操作</h2><p>B 树中，最后真正被删除的元素都在叶子节点中。所以在红黑树中，被删除的节点一定也在最后一层。<br>最后一层有红色节点和黑色节点，我们就以删除节点的颜色来区分删除操作的所有情况。</p>
+<p><strong>如果删除的节点是红色直接删除，不用作任何调整。因为删除最后一层的红色节点，并没有影响红黑树的任何性质。</strong></p>
+<h3 id="3-3-1-删除黑色节点"><a href="#3-3-1-删除黑色节点" class="headerlink" title="3.3.1 删除黑色节点"></a>3.3.1 删除黑色节点</h3><p>有3种情况：</p>
+<ol>
+<li>拥有 2 个红色子节点的黑色节点。<ul>
+<li>不可能被直接删除，因为会找它的子节点替代删除，因此不用考虑这种情况。</li>
+</ul>
+</li>
+<li>拥有 1 个红色子节点的黑色节点。</li>
+<li>黑色叶子节点。</li>
+</ol>
+<h3 id="3-3-2-删除拥有1个红色子节点的黑色节点"><a href="#3-3-2-删除拥有1个红色子节点的黑色节点" class="headerlink" title="3.3.2 删除拥有1个红色子节点的黑色节点"></a>3.3.2 删除拥有1个红色子节点的黑色节点</h3><p><strong>判定条件：</strong> 用以替代的子节点是红色节点</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>用删除节点的唯一子节点对其进行替代。</li>
+<li>将替代节点染成黑色。</li>
+</ol>
+<h3 id="3-3-3-删除黑色叶子节点——删除节点为根节点"><a href="#3-3-3-删除黑色叶子节点——删除节点为根节点" class="headerlink" title="3.3.3 删除黑色叶子节点——删除节点为根节点"></a>3.3.3 删除黑色叶子节点——删除节点为根节点</h3><p>一棵红黑树只有一个黑色根节点（也就是唯一的一个叶子节点，整个红黑树只有这一个黑色节点），可直接删除该节点，无需做其他操作。</p>
+<h3 id="3-3-4-删除黑色叶子节点——删除节点的兄弟节点为黑色"><a href="#3-3-4-删除黑色叶子节点——删除节点的兄弟节点为黑色" class="headerlink" title="3.3.4 删除黑色叶子节点——删除节点的兄弟节点为黑色"></a>3.3.4 删除黑色叶子节点——删除节点的兄弟节点为黑色</h3><p>这种情况会产生下溢（特性5）。</p>
+<h4 id="3-3-4-1-兄弟节点至少有1个红色子节点"><a href="#3-3-4-1-兄弟节点至少有1个红色子节点" class="headerlink" title="3.3.4.1 兄弟节点至少有1个红色子节点"></a>3.3.4.1 兄弟节点至少有1个红色子节点</h4><p><strong>判定条件：</strong> 兄弟节点至少有 1 个红色子节点</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>进行旋转操作。</li>
+<li>旋转之后的中心节点继承父节点（删除节点的父节点）的颜色。</li>
+<li>旋转之后的左右节点染为黑色。</li>
+</ol>
+<h4 id="3-3-4-2-兄弟节点没有红色子节点"><a href="#3-3-4-2-兄弟节点没有红色子节点" class="headerlink" title="3.3.4.2 兄弟节点没有红色子节点"></a>3.3.4.2 兄弟节点没有红色子节点</h4><p><strong>判定条件：</strong> 兄弟节点没有红色子节点</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>父节点向下与兄弟节点进行合并。</li>
+<li>将兄弟染成红色、父节点染成黑色即可修复红黑树性质。<ul>
+<li>如果父节点是黑色，直接将父节点当成被删除的节点处理，来修复父节点的下溢情况。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-3-5-删除黑色叶子节点——删除节点的兄弟节点为红色"><a href="#3-3-5-删除黑色叶子节点——删除节点的兄弟节点为红色" class="headerlink" title="3.3.5 删除黑色叶子节点——删除节点的兄弟节点为红色"></a>3.3.5 删除黑色叶子节点——删除节点的兄弟节点为红色</h3><p><strong>判定条件：</strong> 兄弟节点是红色</p>
+<p><strong>处理方法：</strong></p>
+<ol>
+<li>兄弟节点染成 BLACK，父节点染成染成 RED，对父节点进行右旋。</li>
+<li>于是又回到兄弟节点是黑色的情况（侄子节点变为兄弟节点），继续使用兄弟节点为黑色的方法进行修复。</li>
+</ol>
+<h1 id="4-AVL树-vs-红黑树"><a href="#4-AVL树-vs-红黑树" class="headerlink" title="4. AVL树 vs 红黑树"></a>4. AVL树 vs 红黑树</h1><h2 id="4-1-AVL树"><a href="#4-1-AVL树" class="headerlink" title="4.1 AVL树"></a>4.1 AVL树</h2><ul>
+<li>平衡标准比较严格：每个左右子树的高度差不超过 1。</li>
+<li>最大高度是 1.44 ∗ log2 n + 2 − 1.328（100W 个节点，AVL 树最大树高 28）。</li>
+<li>搜索、添加、删除都是 O(logn) 复杂度，其中添加仅需 O(1) 次旋转调整、删除最多需要 O(logn) 次旋转调整。</li>
+</ul>
+<h2 id="4-2-红黑树"><a href="#4-2-红黑树" class="headerlink" title="4.2 红黑树"></a>4.2 红黑树</h2><ul>
+<li>平衡标准比较宽松：没有一条路径会大于其他路径的2倍。</li>
+<li>最大高度是 2 ∗ log2(n + 1)（100W 个节点，红黑树最大树高 40）。</li>
+<li>搜索、添加、删除都是 O(logn) 复杂度，其中添加、删除都仅需 O(1) 次旋转调整。</li>
+</ul>
+<h2 id="4-3-如何选择"><a href="#4-3-如何选择" class="headerlink" title="4.3 如何选择"></a>4.3 如何选择</h2><ul>
+<li>搜索的次数远远大于插入和删除，选择 AVL 树；搜索、插入、删除次数几乎差不多，选择红黑树。</li>
+<li>相对于 AVL 树来说，红黑树牺牲了部分平衡性以换取插入&#x2F;删除操作时少量的旋转操作，整体来说性能要优于 AVL 树。</li>
+<li>红黑树的平均统计性能优于 AVL 树，实际应用中更多选择使用红黑树。</li>
+</ul>
+<p><strong>原文链接：</strong> <a target="_blank" rel="noopener" href="https://blog.csdn.net/cy973071263/article/details/122543826">https://blog.csdn.net/cy973071263/article/details/122543826</a></p>
 
   </div>
   
@@ -2663,10 +2814,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-10-12T10:54:34+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-05T17:30:56+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 12, 2023</p>
+    <p>更新于：Dec 5, 2023</p>
   </a>
 </div>
 
@@ -2685,7 +2836,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/&title=平滑升级 - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/&title=红黑树原理 - 阿毛之家&summary="
           
           >
           
@@ -2697,7 +2848,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/&title=平滑升级 - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/&title=红黑树原理 - 阿毛之家&summary="
           
           >
           
@@ -2709,7 +2860,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/&title=平滑升级 - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/&title=红黑树原理 - 阿毛之家&summary="
           
           >
           
@@ -2742,15 +2893,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/10/13/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>程序编译</p>
-          <p class='content'>1. 代码编译1234567891011121314151617181920212223# 新工程第一次需要整体编译：./build_lte.sh all tdd arm64 macro./bu...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/09/16/VPP%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/'>
-          <p class='title'>VPP常用命令<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>VPP常用命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495...</p>
+        <a class='next' href='/2023/10/30/shell/'>
+          <p class='title'>shell<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1. 变量 $X 的含义123456789$$          # Shell本身的PID（ProcessID） $!          # Shell最后运行的后台Process的PID $...</p>
         </a>
       
     </div>
@@ -2769,7 +2915,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2811,7 +2957,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%97%8B%E8%BD%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">3.1 旋转操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C"><span class="toc-text">3.2 插入操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-RR-%E5%92%8C-LL-%E6%83%85%E5%86%B5"><span class="toc-text">3.2.1 RR 和 LL 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-LR-%E5%92%8C-RL-%E6%83%85%E5%86%B5"><span class="toc-text">3.2.2 LR 和 RL 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E4%B8%8A%E6%BA%A2%E7%9A%84-LL-%E6%83%85%E5%86%B5"><span class="toc-text">3.2.3 上溢的 LL 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-%E4%B8%8A%E6%BA%A2%E7%9A%84-RR-%E6%83%85%E5%86%B5"><span class="toc-text">3.2.4 上溢的 RR 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5-%E4%B8%8A%E6%BA%A2%E7%9A%84-LR-%E6%83%85%E5%86%B5"><span class="toc-text">3.2.5 上溢的 LR 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%E4%B8%8A%E6%BA%A2%E7%9A%84-RL-%E6%83%85%E5%86%B5"><span class="toc-text">3.2.6 上溢的 RL 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-%E6%8F%92%E5%85%A5%E6%83%85%E5%86%B5%E6%80%BB%E7%BB%93"><span class="toc-text">3.2.7 插入情况总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-text">3.3 删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-%E5%88%A0%E9%99%A4%E9%BB%91%E8%89%B2%E8%8A%82%E7%82%B9"><span class="toc-text">3.3.1 删除黑色节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-%E5%88%A0%E9%99%A4%E6%8B%A5%E6%9C%891%E4%B8%AA%E7%BA%A2%E8%89%B2%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E9%BB%91%E8%89%B2%E8%8A%82%E7%82%B9"><span class="toc-text">3.3.2 删除拥有1个红色子节点的黑色节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-%E5%88%A0%E9%99%A4%E9%BB%91%E8%89%B2%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E2%80%94%E2%80%94%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%BA%E6%A0%B9%E8%8A%82%E7%82%B9"><span class="toc-text">3.3.3 删除黑色叶子节点——删除节点为根节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-4-%E5%88%A0%E9%99%A4%E9%BB%91%E8%89%B2%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E2%80%94%E2%80%94%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E4%B8%BA%E9%BB%91%E8%89%B2"><span class="toc-text">3.3.4 删除黑色叶子节点——删除节点的兄弟节点为黑色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-1-%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E8%87%B3%E5%B0%91%E6%9C%891%E4%B8%AA%E7%BA%A2%E8%89%B2%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-text">3.3.4.1 兄弟节点至少有1个红色子节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-2-%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E6%B2%A1%E6%9C%89%E7%BA%A2%E8%89%B2%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-text">3.3.4.2 兄弟节点没有红色子节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-5-%E5%88%A0%E9%99%A4%E9%BB%91%E8%89%B2%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E2%80%94%E2%80%94%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E4%B8%BA%E7%BA%A2%E8%89%B2"><span class="toc-text">3.3.5 删除黑色叶子节点——删除节点的兄弟节点为红色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-AVL%E6%A0%91"><span class="toc-text">4.1 AVL树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="toc-text">4.2 红黑树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9"><span class="toc-text">4.3 如何选择</span></a></li></ol>
   </div>
 </section>
 
@@ -3772,7 +3918,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/工作/","name":"工作"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/10/09/平滑升级/","name":"平滑升级"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"平滑升级","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/10/09/%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7/","wordCount":0,"datePublished":"2023-10-09T09:08:32.000Z","dateModified":"2023-10-12T02:54:34.646Z","articleSection":"工作","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/储备/","name":"储备"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/12/05/红黑树原理/","name":"红黑树原理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"红黑树原理","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/12/05/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8E%9F%E7%90%86/","wordCount":0,"datePublished":"2023-12-05T08:04:01.000Z","dateModified":"2023-12-05T09:30:56.700Z","articleSection":"储备","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
