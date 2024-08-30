@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/08/23/大端序与小端序/"/>
+  <link rel="canonical" href="http://example.com/2024/08/30/iptable/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>大端序与小端序 - 阿毛之家</title>
+  <title>iptable - 阿毛之家</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客 - LZX - 阿毛之家">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="大端序与小端序">
-<meta property="og:url" content="http://example.com/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/index.html">
+<meta property="og:title" content="iptable">
+<meta property="og:url" content="http://example.com/2024/08/30/iptable/index.html">
 <meta property="og:site_name" content="阿毛之家">
-<meta property="og:description" content="字节存储顺序主要分为大端序（Big-endian）和小端序（Little-endian），区别如下：  Big-endian：高位字节存入低地址，低位字节存入高地址 Little-endian：低位字节存入低地址，高位字节存入高地址  例如，将12345678h写入1000h开始的内存中，以大端序和小端序模式存放结果如下：  一般来说，x86系列CPU都是Little-endian字节序，Powe">
+<meta property="og:description" content="1. 特点iptables 是 Linux 防火墙工作在用户空间的管理工具，是 netfilter&#x2F;iptablesIP 信息包过滤系统是一部分，用来设置、维护和检查 Linux 内核的 IP 数据包过滤规则。 iptables 是基于内核的防火墙，功能非常强大；iptables 内置了filter，nat和mangle三张表。所有规则配置后，立即生效，不需要重启服务。 2. 四表123">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-08-23T09:04:11.000Z">
-<meta property="article:modified_time" content="2023-09-07T09:38:40.357Z">
+<meta property="article:published_time" content="2024-08-30T02:30:45.000Z">
+<meta property="article:modified_time" content="2024-08-30T03:07:07.811Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2517,7 +2517,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/23/大端序与小端序/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/30/iptable/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="阿毛之家">
   </span>
@@ -2538,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        大端序与小端序
+        iptable
       </h1>
       <div class='new-meta-box'>
         
@@ -2560,10 +2560,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%82%A8%E5%A4%87/">储备</a>
+    <a class="category-link" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%82%A8%E5%A4%87/" itemprop="url"><span itemprop="name">储备</span></a>
+        <a href="/categories/%E5%B7%A5%E4%BD%9C/" itemprop="url"><span itemprop="name">工作</span></a>
       </span>
     
   </div>
@@ -2574,10 +2574,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-23T17:04:11+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-08-30T10:30:45+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 23, 2023</p>
+    <p>发布于：Aug 30, 2024</p>
   </a>
 </div>
 
@@ -2600,15 +2600,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><strong>字节存储顺序主要分为大端序（Big-endian）和小端序（Little-endian），区别如下：</strong></p>
-<ul>
-<li>Big-endian：高位字节存入低地址，低位字节存入高地址</li>
-<li>Little-endian：低位字节存入低地址，高位字节存入高地址</li>
-</ul>
-<p>例如，将12345678h写入1000h开始的内存中，以大端序和小端序模式存放结果如下：</p>
-<p><img src="/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/image.png" class="lazyload" data-srcset="/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/image.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt text"></p>
-<p><strong>一般来说，x86系列CPU都是Little-endian字节序，PowerPC通常是Big-endian字节序。</strong><br><strong>因为网络协议也都是采用Big-endian方式传输数据的，所以有时也把Big-endian方式称为网络字节序。</strong></p>
+    <h2 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h2><p>iptables 是 Linux 防火墙工作在用户空间的管理工具，是 netfilter&#x2F;iptablesIP 信息包过滤系统是一部分，用来设置、维护和检查 Linux 内核的 IP 数据包过滤规则。</p>
+<p>iptables 是基于内核的防火墙，功能非常强大；iptables 内置了filter，nat和mangle三张表。所有规则配置后，立即生效，不需要重启服务。</p>
+<h2 id="2-四表"><a href="#2-四表" class="headerlink" title="2. 四表"></a>2. 四表</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">filter	包过滤		    </span><br><span class="line">        INPUT、OUTPUT、FORWARD								</span><br><span class="line">        对数据包进行过滤，根据具体的规则决定是否放行该数据包（如DROP、ACCEPT、REJECT、LOG）</span><br><span class="line"></span><br><span class="line">nat		网络地址转换</span><br><span class="line">        PREROUTING、OUTPUT、POSTROUTING</span><br><span class="line">        修改数据包的IP地址、端口号等信息（网络地址转换，如SNAT、DNAT、MASQUERADE、REDIRECT）</span><br><span class="line"></span><br><span class="line">mangle	包重构</span><br><span class="line">        PREROUTING、INPUT、OUTPUT、FORWARD、POSTROUTING</span><br><span class="line">        修改数据包的TOS（Type Of Service，服务类型）、TTL（Time To Live，生存周期）指以及为数据包设置Mark标记</span><br><span class="line"></span><br><span class="line">raw		数据跟踪处理</span><br><span class="line">        PREROUTING、OUTPUT</span><br><span class="line">        决定数据包是否被状态跟踪机制处理。</span><br><span class="line"></span><br><span class="line">优先级：raw &gt; mangle &gt; nat &gt; filter</span><br></pre></td></tr></table></figure>
 
+<h2 id="3-五链"><a href="#3-五链" class="headerlink" title="3. 五链"></a>3. 五链</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input			匹配目标IP是本机的数据包</span><br><span class="line">output			出口数据包 ， 一般不在此链上做配置</span><br><span class="line">forward			匹配流经本机的数据包</span><br><span class="line">prerouting		修改目的地址，用来做 DNAT 。如：把内网中的 80 端口映射到互联网端口</span><br><span class="line">postrouting		修改源地址，用来做 SNAT。如：局域网共享一个公网 IP 接入 Internet</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-数据包的四种状态"><a href="#4-数据包的四种状态" class="headerlink" title="4. 数据包的四种状态"></a>4. 数据包的四种状态</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NEW				该包想要开始一个连接（重新连接或将连接重定向）</span><br><span class="line">RELATED			该包是属于某个已经建立的连接所建立的新连接</span><br><span class="line">ESTABLISHED		一个数据连接从 NEW 变为 ESTABLISHED，表示连接建立成功，会继续匹配这个连接的后续数据包</span><br><span class="line">INVALID			数据包不能被识别属于哪个连接或没有任何状态比如内存溢出，收到不知属于哪个连接的ICMP错误信息，一般应该DROP这个状态的任何数据</span><br></pre></td></tr></table></figure>
   </div>
   
   
@@ -2645,10 +2643,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-07T17:38:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-30T11:07:07+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 7, 2023</p>
+    <p>更新于：Aug 30, 2024</p>
   </a>
 </div>
 
@@ -2667,7 +2665,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/&title=大端序与小端序 - 阿毛之家&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/08/30/iptable/&title=iptable - 阿毛之家&summary="
           
           >
           
@@ -2679,7 +2677,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/&title=大端序与小端序 - 阿毛之家&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/08/30/iptable/&title=iptable - 阿毛之家&summary="
           
           >
           
@@ -2691,7 +2689,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/&title=大端序与小端序 - 阿毛之家&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/08/30/iptable/&title=iptable - 阿毛之家&summary="
           
           >
           
@@ -2724,29 +2722,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/08/24/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%BA%8C%EF%BC%89/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>网络传输协议（二）</p>
-          <p class='content'>协议：ARP，DHCP和ICMP
-4. ARP4.1 ARP的作用ARP（Address Resolution Protocol，地址解析协议）是将IP地址解析为以太网MAC地址（或称物理地址）...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/08/17/GDB%E5%B8%B8%E7%94%A8%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/'>
-          <p class='title'>GDB常用调试命令<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>常用调试命令
-
-
-调试命令（缩写）
-作用
-
-
-
-break (b) xxx
-在源代码指定的某一行设置断点，其中xxx用于指定具体打断点位置。
-
-
-run (r)
-执行被调试的程序，其会自动在第一...</p>
+        <a class='next' href='/2024/08/08/%E4%BC%A0%E8%BE%93%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%88PTP%E6%A8%A1%E5%BC%8F%EF%BC%89/'>
+          <p class='title'>传输基础功能测试（PTP模式）<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1. 测试场景说明共四种场景：非BOND非共IP、非BOND共IP、BOND非共IP、BOND共IP。（1）BOND：指的是接口主备模式（2）共IP：指的是PTP时钟链路与SCTP链路本段使用同...</p>
         </a>
       
     </div>
@@ -2765,7 +2744,7 @@ run (r)
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/08/30/iptable/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2807,7 +2786,7 @@ run (r)
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%89%B9%E7%82%B9"><span class="toc-text">1. 特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9B%9B%E8%A1%A8"><span class="toc-text">2. 四表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%94%E9%93%BE"><span class="toc-text">3. 五链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="toc-text">4. 数据包的四种状态</span></a></li></ol>
   </div>
 </section>
 
@@ -3768,7 +3747,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/储备/","name":"储备"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/08/23/大端序与小端序/","name":"大端序与小端序"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"大端序与小端序","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/","wordCount":0,"datePublished":"2023-08-23T09:04:11.000Z","dateModified":"2023-09-07T09:38:40.357Z","articleSection":"储备","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/工作/","name":"工作"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/08/30/iptable/","name":"iptable"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"iptable","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/08/30/iptable/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/08/30/iptable/","wordCount":0,"datePublished":"2024-08-30T02:30:45.000Z","dateModified":"2024-08-30T03:07:07.811Z","articleSection":"工作","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
