@@ -2156,7 +2156,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1731898703109),
+    lastupdate: new Date(1731911750900),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2522,6 +2522,140 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/24/网络传输协议（二）/">
+  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
+    <meta itemprop="name" content="阿毛之家">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
+    <meta itemprop="name" content="阿毛之家">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/24/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%BA%8C%EF%BC%89/"  itemprop="url">
+        网络传输协议（二）
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        协议：ARP，DHCP和ICMP
+4. ARP4.1 ARP的作用ARP（Address Resolution Protocol，地址解析协议）是将IP地址解析为以太网MAC地址（或称物理地址）的协议。在局域网中，当主机或其它网络设备有数据要发送给另一个主机或设备时，它必须知道对方的网络层地址（即IP地址）。但是仅仅有IP地址是不够的，因为IP数据报文必须封装成帧才能通过物理网络发送，因此发...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-24T10:13:48+08:00">2023-08-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%82%A8%E5%A4%87/">储备</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
+              <a href="/categories/%E5%82%A8%E5%A4%87/" itemprop="url"><span itemprop="name">储备</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/24/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%BA%8C%EF%BC%89/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/23/大端序与小端序/">
+  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
+    <meta itemprop="name" content="阿毛之家">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
+    <meta itemprop="name" content="阿毛之家">
+    <meta itemprop="description" content="个人博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/"  itemprop="url">
+        大端序与小端序
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        字节存储顺序主要分为大端序（Big-endian）和小端序（Little-endian），区别如下：
+
+Big-endian：高位字节存入低地址，低位字节存入高地址
+Little-endian：低位字节存入低地址，高位字节存入高地址
+
+例如，将12345678h写入1000h开始的内存中，以大端序和小端序模式存放结果如下：
+
+一般来说，x86系列CPU都是Little-endian字节序，P...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-23T17:04:11+08:00">2023-08-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%82%A8%E5%A4%87/">储备</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
+              <a href="/categories/%E5%82%A8%E5%A4%87/" itemprop="url"><span itemprop="name">储备</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/08/23/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/17/GDB常用调试命令/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="阿毛之家">
@@ -2548,7 +2682,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        常用调试命令
+        常用命令
 
 
 调试命令（缩写）
@@ -2572,7 +2706,8 @@ next (n)
 令程序一行代码一行代码的执行。
 
 
-step (s)...
+step (s)
+如...
       
     
   </div>
@@ -3082,7 +3217,7 @@ NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途
           <li><a class="flat-box"
             title="/categories/%E5%82%A8%E5%A4%87/" href="/categories/%E5%82%A8%E5%A4%87/"
             active-action="action-categoriesE582A8E5A487"
-            ><div class='name'>储备</div><div class='badge'>(15)</div></a></li>
+            ><div class='name'>储备</div><div class='badge'>(17)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%B7%A5%E4%BD%9C/" href="/categories/%E5%B7%A5%E4%BD%9C/"
@@ -3092,12 +3227,7 @@ NAS：非接入层信令，是UE和核心网EPC之间使用的信令，虽然途
           <li><a class="flat-box"
             title="/categories/%E5%B7%A5%E5%85%B7-%E6%95%99%E7%A8%8B/" href="/categories/%E5%B7%A5%E5%85%B7-%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE5B7A5E585B7-E69599E7A88B"
-            ><div class='name'>工具&教程</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
-            active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>工具&教程</div><div class='badge'>(6)</div></a></li>
         
       </ul>
     </div>
