@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-02-24T06:42:32.000Z">
-<meta property="article:modified_time" content="2025-02-24T10:28:23.394Z">
+<meta property="article:modified_time" content="2025-02-25T06:16:41.278Z">
 <meta property="article:author" content="LZX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2158,7 +2158,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1740451511075),
+    lastupdate: new Date(1740464785493),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2822,7 +2822,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td>校验和（覆盖整个SCTP数据包）。</td>
 </tr>
 </tbody></table>
-<p><strong>DATA Chunk</strong></p>
+<p><strong>（1）DATA Chunk（正常数据，类型 0x00）</strong></p>
 <table>
 <thead>
 <tr>
@@ -2834,37 +2834,257 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <tbody><tr>
 <td><strong>Chunk Type</strong></td>
 <td>8</td>
-<td>Chunk类型（<code>0x00</code>&#x3D;DATA，<code>0x01</code>&#x3D;INIT，<code>0x02</code>&#x3D;INIT ACK等）。</td>
+<td>固定为 <code>0x00</code>（标识为DATA Chunk）。</td>
 </tr>
 <tr>
 <td><strong>Chunk Flags</strong></td>
 <td>8</td>
-<td>标志位（如 <code>U</code>&#x3D;无序交付，<code>B</code>&#x3D;首分片，<code>E</code>&#x3D;末分片）。</td>
+<td>控制标志：<br>- <strong>U</strong>（Unordered，无序交付，<code>1</code>&#x3D;启用）；<br>- <strong>B</strong>（Beginning，首分片，<code>1</code>&#x3D;数据起始）；<br>- <strong>E</strong>（Ending，末分片，<code>1</code>&#x3D;数据结束）；<br>- 其余位保留（设为<code>0</code>）。</td>
 </tr>
 <tr>
 <td><strong>Chunk Length</strong></td>
 <td>16</td>
-<td>Chunk总长度（包括头部和数据）。</td>
+<td>DATA Chunk总长度（单位：字节），包含头部、数据及可能的填充。</td>
 </tr>
 <tr>
 <td><strong>TSN</strong></td>
 <td>32</td>
-<td>传输序列号（用于数据顺序控制）。</td>
+<td>传输序列号（Transmission Sequence Number），唯一标识数据块。</td>
 </tr>
 <tr>
 <td><strong>Stream Identifier</strong></td>
 <td>16</td>
-<td>流标识符（标识所属数据流）。</td>
+<td>流标识符（Stream ID），标识数据所属的流。</td>
 </tr>
 <tr>
 <td><strong>Stream Sequence Number</strong></td>
 <td>16</td>
-<td>流内序列号（标识流内数据顺序）。</td>
+<td>流内序列号（Stream Sequence Number），标识流内数据的顺序。</td>
 </tr>
 <tr>
 <td><strong>Payload Protocol Identifier</strong></td>
 <td>32</td>
-<td>负载协议标识（如应用层协议类型）。</td>
+<td>负载协议标识符（PPID），标识上层协议类型（如HTTP、SIP等）。</td>
+</tr>
+<tr>
+<td><strong>Payload Data</strong></td>
+<td>可变</td>
+<td>实际用户数据（长度由<code>Chunk Length</code>计算得出）。</td>
+</tr>
+<tr>
+<td><strong>Padding</strong></td>
+<td>可变（0-3B）</td>
+<td>填充字节（可选），确保整个Chunk长度为4字节对齐。</td>
+</tr>
+</tbody></table>
+<p><strong>（2）INIT Chunk（初始化连接，类型 0x01）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Initiate Tag</strong></td>
+<td>32</td>
+<td>发起方验证标签（用于后续数据包验证）。</td>
+</tr>
+<tr>
+<td><strong>Advertised Receiver Window Credit (a_rwnd)</strong></td>
+<td>32</td>
+<td>接收窗口大小（初始流量控制参数）。</td>
+</tr>
+<tr>
+<td><strong>Number of Outbound Streams</strong></td>
+<td>16</td>
+<td>发起方支持的最大出站流数量。</td>
+</tr>
+<tr>
+<td><strong>Number of Inbound Streams</strong></td>
+<td>16</td>
+<td>发起方支持的最大入站流数量。</td>
+</tr>
+<tr>
+<td><strong>Initial TSN</strong></td>
+<td>32</td>
+<td>初始传输序列号（TSN起始值）。</td>
+</tr>
+<tr>
+<td><strong>Optional Parameters</strong></td>
+<td>可变</td>
+<td>可选参数（如支持的地址列表、Cookie Preservative等）。</td>
+</tr>
+</tbody></table>
+<p><strong>（3）INIT ACK Chunk（初始化确认，类型 0x02）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Initiate Tag</strong></td>
+<td>32</td>
+<td>响应方生成的验证标签。</td>
+</tr>
+<tr>
+<td><strong>Advertised Receiver Window Credit (a_rwnd)</strong></td>
+<td>32</td>
+<td>响应方的接收窗口大小。</td>
+</tr>
+<tr>
+<td><strong>Number of Outbound Streams</strong></td>
+<td>16</td>
+<td>响应方支持的最大出站流数量。</td>
+</tr>
+<tr>
+<td><strong>Number of Inbound Streams</strong></td>
+<td>16</td>
+<td>响应方支持的最大入站流数量。</td>
+</tr>
+<tr>
+<td><strong>Initial TSN</strong></td>
+<td>32</td>
+<td>响应方初始传输序列号。</td>
+</tr>
+<tr>
+<td><strong>State Cookie</strong></td>
+<td>可变</td>
+<td>包含连接状态信息的Cookie（防攻击）。</td>
+</tr>
+<tr>
+<td><strong>Optional Parameters</strong></td>
+<td>可变</td>
+<td>可选参数（如地址列表扩展）。</td>
+</tr>
+</tbody></table>
+<p><strong>（4）SACK Chunk（选择性确认，类型 0x03）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Cumulative TSN Ack</strong></td>
+<td>32</td>
+<td>已确认的最高连续TSN。</td>
+</tr>
+<tr>
+<td><strong>Advertised Receiver Window Credit (a_rwnd)</strong></td>
+<td>32</td>
+<td>更新后的接收窗口大小。</td>
+</tr>
+<tr>
+<td><strong>Number of Gap Ack Blocks</strong></td>
+<td>16</td>
+<td>非连续确认块的数量（标识已接收的非连续TSN范围）。</td>
+</tr>
+<tr>
+<td><strong>Number of Duplicate TSNs</strong></td>
+<td>16</td>
+<td>重复接收的TSN数量（用于检测丢包或重复）。</td>
+</tr>
+<tr>
+<td><strong>Gap Ack Blocks</strong></td>
+<td>可变</td>
+<td>非连续确认块列表（每个块由起始和结束偏移量表示）。</td>
+</tr>
+<tr>
+<td><strong>Duplicate TSNs</strong></td>
+<td>可变</td>
+<td>重复接收的TSN列表。</td>
+</tr>
+</tbody></table>
+<p><strong>（5）HEARTBEAT &#x2F; HEARTBEAT ACK Chunk（心跳检测，类型 0x04&#x2F;0x05）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Cumulative TSN Ack</strong></td>
+<td>32</td>
+<td>已确认的最高连续TSN。</td>
+</tr>
+<tr>
+<td><strong>Advertised Receiver Window Credit (a_rwnd)</strong></td>
+<td>32</td>
+<td>更新后的接收窗口大小。</td>
+</tr>
+<tr>
+<td><strong>Number of Gap Ack Blocks</strong></td>
+<td>16</td>
+<td>非连续确认块的数量（标识已接收的非连续TSN范围）。</td>
+</tr>
+<tr>
+<td><strong>Number of Duplicate TSNs</strong></td>
+<td>16</td>
+<td>重复接收的TSN数量（用于检测丢包或重复）。</td>
+</tr>
+<tr>
+<td><strong>Gap Ack Blocks</strong></td>
+<td>可变</td>
+<td>非连续确认块列表（每个块由起始和结束偏移量表示）。</td>
+</tr>
+<tr>
+<td><strong>Duplicate TSNs</strong></td>
+<td>可变</td>
+<td>重复接收的TSN列表。</td>
+</tr>
+</tbody></table>
+<p><strong>（6）ABORT Chunk（终止连接，类型 0x06）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Error Causes</strong></td>
+<td>可变</td>
+<td>终止原因（如协议错误、资源不足等）。</td>
+</tr>
+</tbody></table>
+<p><strong>（7）SHUTDOWN Chunk（优雅关闭，类型 0x07）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Cumulative TSN Ack</strong></td>
+<td>32</td>
+<td>已确认的最高连续TSN（用于关闭前的数据确认）。</td>
+</tr>
+</tbody></table>
+<p><strong>（8）ERROR Chunk（错误通知，类型 0x09）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>位数（比特）</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Error Causes</strong></td>
+<td>可变</td>
+<td>错误原因列表（如无效流ID、Cookie过期等）。</td>
 </tr>
 </tbody></table>
 <h2 id="5-GTP-U协议"><a href="#5-GTP-U协议" class="headerlink" title="5. GTP-U协议"></a>5. GTP-U协议</h2><table>
@@ -2968,10 +3188,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-02-24T18:28:23+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-02-25T14:16:41+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Feb 24, 2025</p>
+    <p>更新于：Feb 25, 2025</p>
   </a>
 </div>
 
@@ -4072,7 +4292,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/02/24/协议解析/","name":"协议解析"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"协议解析","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/02/24/%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/02/24/%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/","wordCount":0,"datePublished":"2025-02-24T06:42:32.000Z","dateModified":"2025-02-24T10:28:23.394Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"阿毛之家"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/02/24/协议解析/","name":"协议解析"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"阿毛之家","url":"http://example.com/","keywords":null,"description":"个人博客","author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客"},"publisher":{"@type":"Organization","name":"阿毛之家","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"协议解析","description":"个人博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/02/24/%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/"},"author":{"@type":"Person","name":"LZX","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"阿毛之家","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/02/24/%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/","wordCount":0,"datePublished":"2025-02-24T06:42:32.000Z","dateModified":"2025-02-25T06:16:41.278Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
